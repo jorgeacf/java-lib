@@ -9,13 +9,14 @@ public class SearchAlgorithms {
 		
 		int start = 0;
 		int end = elements.length - 1;
-		int mid = end / 2;
+		int mid = 0;
 		
-		while(start > end) {
+		while(start <= end) {
 			
-			if(elements[mid] == element) {
-				
-			}
+			mid = start + ((end - start) / 2);
+			if(elements[mid] == element) { return mid; }
+			else if (element > elements[mid]) { start = mid + 1; }
+			else if (element < elements[mid]) { end = mid - 1; }
 			
 		}
 		
