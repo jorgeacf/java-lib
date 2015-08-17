@@ -11,7 +11,7 @@ public class LinkedListTests {
 	@Test
 	public void testEmpty() {
 		
-		LinkedList<Integer> list = new LinkedList<Integer>();
+		ILinkedList<Integer> list = new LinkedList<Integer>();
 		
 		assertTrue(list.isEmpty());
 		assertEquals(0, list.size());

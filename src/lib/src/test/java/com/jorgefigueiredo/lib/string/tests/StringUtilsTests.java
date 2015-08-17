@@ -1,10 +1,11 @@
 package com.jorgefigueiredo.lib.string.tests;
 
+import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 import com.jorgefigueiredo.lib.string.StringUtils;
 
-import junit.framework.Assert;
 
 public class StringUtilsTests {
 
@@ -24,8 +25,8 @@ public class StringUtilsTests {
 		
 		Character[] result = StringUtils.getDuplicateCharacters(input);
 		
-		Assert.assertNotNull(result);
-		Assert.assertEquals(0, result.length);
+		assertNotNull(result);
+		assertEquals(0, result.length);
 	}
 
 	@Test
@@ -35,9 +36,9 @@ public class StringUtilsTests {
 		
 		Character[] result = StringUtils.getDuplicateCharacters(input);
 		
-		Assert.assertNotNull(result);
-		Assert.assertEquals(1, result.length);
-		Assert.assertEquals('a', (char)result[0]);
+		assertNotNull(result);
+		assertEquals(1, result.length);
+		assertEquals('a', (char)result[0]);
 	}
 	
 	@Test
@@ -47,11 +48,11 @@ public class StringUtilsTests {
 		
 		Character[] result = StringUtils.getDuplicateCharacters(input);
 		
-		Assert.assertNotNull(result);
-		Assert.assertEquals(3, result.length);
-		Assert.assertEquals('r', (char)result[0]);
-		Assert.assertEquals('m', (char)result[1]);
-		Assert.assertEquals('g', (char)result[2]);
+		assertNotNull(result);
+		assertEquals(3, result.length);
+		assertEquals('r', (char)result[0]);
+		assertEquals('m', (char)result[1]);
+		assertEquals('g', (char)result[2]);
 	}
 	
 	@Test
@@ -62,7 +63,7 @@ public class StringUtilsTests {
 		
 		boolean result = StringUtils.areTheTwoStringsAnagramsOfEachOther(inputA, inputB);
 		
-		Assert.assertTrue(result);
+		assertTrue(result);
 		
 	}
 	
@@ -74,8 +75,19 @@ public class StringUtilsTests {
 		
 		boolean result = StringUtils.areTheTwoStringsAnagramsOfEachOther(inputA, inputB);
 		
-		Assert.assertFalse(result);
+		assertFalse(result);
 		
+	}
+	
+	@Test
+	public void test_is_anagram() {
+		
+		String a = "abbcccddddeeeffg";
+		String b = new StringBuilder(a).reverse().toString();
+		
+		boolean result = StringUtils.isAnagram(a, b);
+		
+		assertTrue(result);
 	}
 	
 }

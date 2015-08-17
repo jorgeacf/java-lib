@@ -3,7 +3,7 @@ package com.jorgefigueiredo.datastructures.list;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class Queue<T> implements Iterable<T> {
+public class Queue<T> implements Iterable<T>, IQueue<T> {
 
 	private Node first;
 	private Node last;

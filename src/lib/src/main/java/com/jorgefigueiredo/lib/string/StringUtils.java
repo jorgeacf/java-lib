@@ -6,6 +6,34 @@ import java.util.List;
 
 public class StringUtils {
 
+	public static boolean isAnagram(String input1, String input2) {
+		
+		if(input1 == null || input2 == null) {
+			return false;
+		}
+		
+		if(input1.length() == 0 || input2.length() == 2) {
+			return true;
+		}
+		
+		int[] characters_counter = new int[255];
+		
+		for(int i = 0; i < input1.length(); i++) {
+			characters_counter[input1.charAt(i)]++;
+		}
+		
+		for(int i = 0; i < input2.length(); i++) {
+			characters_counter[input2.charAt(i)]--;
+		}
+		
+		for(int i = 0; i < characters_counter.length; i++) {
+			if(characters_counter[i] != 0) {
+				return false;
+			}
+		}
+		
+		return true;
+	}
 	
 	public static Character[] getDuplicateCharacters(String input) {
 		

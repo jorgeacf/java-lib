@@ -11,7 +11,7 @@ public class QueueTests {
 	@Test(expected=RuntimeException.class)
 	public void testEmptyQueue() {
 		
-		Queue<Integer> queue = new Queue<Integer>();
+		IQueue<Integer> queue = new Queue<Integer>();
 	
 		queue.dequeue();
 		
@@ -20,7 +20,7 @@ public class QueueTests {
 	@Test
 	public void testRemoveThreeItems() {
 	
-		Queue<Integer> queue = new Queue<Integer>();
+		IQueue<Integer> queue = new Queue<Integer>();
 		
 		queue.enqueue(1);
 		queue.enqueue(2);

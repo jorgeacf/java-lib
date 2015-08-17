@@ -11,7 +11,7 @@ public class StackTests {
 	@Test(expected=RuntimeException.class)
 	public void testEmptyStack() {
 		
-		Stack<Integer> stack = new Stack<Integer>();
+		IStack<Integer> stack = new Stack<Integer>();
 	
 		stack.pop();
 		
@@ -20,7 +20,7 @@ public class StackTests {
 	@Test
 	public void testThreeItems() {
 		
-		Stack<Integer> stack = new Stack<Integer>();
+		IStack<Integer> stack = new Stack<Integer>();
 		
 		stack.push(1);
 		stack.push(2);

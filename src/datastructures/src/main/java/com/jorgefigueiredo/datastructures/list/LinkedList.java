@@ -1,7 +1,7 @@
 package com.jorgefigueiredo.datastructures.list;
 
 
-public class LinkedList<T> {
+public class LinkedList<T> implements ILinkedList<T> {
 
 	private int size;
 	private Node first;

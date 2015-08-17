@@ -3,7 +3,7 @@ package com.jorgefigueiredo.datastructures.list;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class Stack<T> implements Iterable<T> {
+public class Stack<T> implements Iterable<T>, IStack<T> {
 
 	private Node first;
 	private int size = 0;
