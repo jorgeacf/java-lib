@@ -90,4 +90,23 @@ public class StringUtilsTests {
 		assertTrue(result);
 	}
 	
+	@Test
+	public void test_is_isomorphic_true() {
+		
+		String a = "egg";
+		String b = "add";
+		
+		assertTrue(StringUtils.isIsomorphic(a, b));
+	}
+	
+	@Test
+	public void test_is_isomorphic_false() {
+
+		String a = "foo";
+		String b = "bar";
+		
+		assertFalse(StringUtils.isIsomorphic(a, b));
+		
+	}
+	
 }

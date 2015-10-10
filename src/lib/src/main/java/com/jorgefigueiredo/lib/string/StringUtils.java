@@ -3,27 +3,28 @@ package com.jorgefigueiredo.lib.string;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map.Entry;
 
 public class StringUtils {
 
-	public static boolean isAnagram(String input1, String input2) {
+	public static boolean isAnagram(String a, String b) {
 		
-		if(input1 == null || input2 == null) {
+		if(a == null || b == null) {
 			return false;
 		}
 		
-		if(input1.length() == 0 || input2.length() == 2) {
+		if(a.length() == 0 || b.length() == 2) {
 			return true;
 		}
 		
 		int[] characters_counter = new int[255];
 		
-		for(int i = 0; i < input1.length(); i++) {
-			characters_counter[input1.charAt(i)]++;
+		for(int i = 0; i < a.length(); i++) {
+			characters_counter[a.charAt(i)]++;
 		}
 		
-		for(int i = 0; i < input2.length(); i++) {
-			characters_counter[input2.charAt(i)]--;
+		for(int i = 0; i < b.length(); i++) {
+			characters_counter[b.charAt(i)]--;
 		}
 		
 		for(int i = 0; i < characters_counter.length; i++) {
@@ -55,7 +56,7 @@ public class StringUtils {
 		return repeted.toArray(new Character[0]);
 	}
 	
-	public static Boolean areTheTwoStringsAnagramsOfEachOther(String a, String b) {
+	public static boolean areTheTwoStringsAnagramsOfEachOther(String a, String b) {
 		
 		if( (a == null || b == null) || a.length() != b.length() ) {
 			return false;
@@ -76,6 +77,44 @@ public class StringUtils {
 			
 			if(counter[index] < 0) {
 				return false;
+			}
+		}
+		
+		return true;
+	}
+	
+	public static boolean isIsomorphic(String a, String b) {
+		
+		
+		// TODO - Improve
+		
+		
+		HashMap<Character, Character> map = new HashMap<Character, Character>();
+		
+		for(int i = 0; i < a.length(); i++) {
+			
+			char ca = a.charAt(i);
+			char cb = b.charAt(i);
+			
+			if(map.containsKey(ca)) {
+				if(map.get(ca) != cb) {
+					return false;
+				}
+			}
+			else if(map.containsValue(cb)) {
+				boolean isValuePresent = false;
+				for(Entry<Character, Character> entry : map.entrySet()) {
+					if(entry.getValue() == cb && entry.getKey() == ca) {
+						isValuePresent = true;
+						break;
+					}
+				}
+				if(!isValuePresent) {
+					return false;
+				}
+			}
+			else {
+				map.put(ca, cb);
 			}
 		}
 		
