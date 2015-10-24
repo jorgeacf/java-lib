@@ -5,4 +5,4 @@ install: cd src/structures;mvn install -DskipTests=true
 script: cd src/structures;mvn test -e -X
 
 jdk:
-	-openjdk8
+ -openjdk8
