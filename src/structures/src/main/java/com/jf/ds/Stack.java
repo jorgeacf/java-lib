@@ -76,7 +76,7 @@ public class Stack<T> implements Iterable<T>, IStack<T> {
 		}
 		
 		public void remove() {
-			Iterator.super.remove();
+			throw new UnsupportedOperationException();
 		}
 	}
 	

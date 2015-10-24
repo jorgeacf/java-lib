@@ -39,11 +39,11 @@ public class Bag<Item> implements Iterable<Item> {
 		return new ListIterator<Item>(first);
 	}
 
-	@SuppressWarnings("hiding")
-	private class ListIterator<Item> implements Iterator<Item> {
-		private Node<Item> current;
+	
+	private class ListIterator<T> implements Iterator<T> {
+		private Node<T> current;
 		
-		public ListIterator(Node<Item> first) {
+		public ListIterator(Node<T> first) {
 			current = first;
 		}
 		
@@ -51,15 +51,15 @@ public class Bag<Item> implements Iterable<Item> {
 			return current != null;
 		}
 
-		public Item next() {
+		public T next() {
 			if(!hasNext()) throw new NoSuchElementException();
-			Item item = current.item;
+			T item = current.item;
 			current = current.next;
 			return item;
 		}
 		
 		public void remove() {
-			Iterator.super.remove();
+			throw new UnsupportedOperationException();
 		}
 	}
 	

@@ -83,7 +83,7 @@ public class Queue<T> implements Iterable<T>, IQueue<T> {
 		}
 		
 		public void remove() {
-			Iterator.super.remove();
+			throw new UnsupportedOperationException();
 		}
 	}
 	
