@@ -75,6 +75,9 @@ public class Stack<T> implements Iterable<T>, IStack<T> {
 			return item;
 		}
 		
+		public void remove() {
+			Iterator.super.remove();
+		}
 	}
 	
 }

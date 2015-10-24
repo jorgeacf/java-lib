@@ -82,6 +82,9 @@ public class Queue<T> implements Iterable<T>, IQueue<T> {
 			return item;
 		}
 		
+		public void remove() {
+			Iterator.super.remove();
+		}
 	}
 	
 }
