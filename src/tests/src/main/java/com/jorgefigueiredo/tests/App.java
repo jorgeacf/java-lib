@@ -1,8 +1,6 @@
 package com.jorgefigueiredo.tests;
 
-import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Set;
 
 /**
  * Hello world!
@@ -10,93 +8,55 @@ import java.util.Set;
  */
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args ) throws InterruptedException
     {
+        Integer[] items = new Integer[] { 1, 2, 3, 4 ,5 ,6 ,7, 8, 9  };
     	
-    	Set<Integer> set1 = new HashSet<Integer>();
+    	MyList<Integer> list = new MyList<Integer>(items);
     	
-    	Integer a = 1;
-    	Integer b = 2;
+    	Iterator<Integer> itr = list.iterator();
     	
-    	set1.add(a);
-    	set1.add(b);
-    	
-    	for(Integer i : set1) {
-    		System.out.print(i + " ");
+    	while(itr.hasNext()) {
+    		System.out.print(itr.next());
+    	}
+
+    	while(itr.hasNext()) {
+    		System.out.print(itr.next());
     	}
     	
-    	a = 99;
-    	
-    	for(Integer i : set1) {
-    		System.out.print(i + " ");
-    	}
-    	
-    	System.out.println("-----------");
-    	
-    	Set<Element> set2 = new HashSet<Element>();
-    	
-    	Element a2 = new Element("a2");
-    	Element b2 = new Element("b2");
-    	
-    	set2.add(a2);
-    	set2.add(b2);
-    	
-    	for(Element i : set2) {
-    		System.out.print(i + " ");
-    	}
-    	
-    	a2 = new Element("XX");
-    	
-    	for(Element i : set2) {
-    		System.out.print(i + " ");
-    	}
-    	
-    	System.out.println(set2.iterator().next() == b2);
-    	
-    	Iterator<Element> i = set2.iterator();
-    	i.next();
-    	System.out.println(i.next() == b2);
-    	
-        System.out.println( "End!" );
-        
-        Element x = new Element("X");
-        Element y = new Element("Y");
-        Element w = new Element("X");
-        
-        System.out.println(x == y);
-        System.out.println(x == w);
-        
-        System.out.println(x.equals(y));
-        System.out.println(x.equals(w));
     }
     
-    private static class Element {
+    
+    public static class MyList<T> implements Iterable<T> {
+
+    	private T[] items;
     	
-    	private final String value;
-    	
-    	public Element(String value) {
-    		this.value = value;
+    	public MyList(T[] items) {
+    		this.items = items;
     	}
     	
-    	@Override
-    	public int hashCode() {
-    		return value.hashCode();
-    	}
+		public Iterator<T> iterator() {
+			return new Iterator<T>() {
+
+				int index = 0;
+				
+				public boolean hasNext() {
+					
+					return index < items.length;
+				}
+
+				public T next() {
+					T item = items[index];
+					index++;
+					return item;
+				}
+				
+			};
+		}
     	
-    	@Override
-    	public boolean equals(Object obj) {
-    		
-    		if (obj instanceof Element) {
-    			Element element = (Element)obj;
-    			return element.value.equals(this.value);
-    		}
-    		
-    		return false;
-    	}
     	
-    	@Override
-    	public String toString() {
-    		return value.toString();
-    	}
+    	
     }
+    
+    
 }
