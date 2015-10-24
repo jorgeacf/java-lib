@@ -1,2 +1,2 @@
 language: java
-script: mvn test -f src/structures/pom.xml
+script: mvn clean test compile -f src/structures/pom.xml
