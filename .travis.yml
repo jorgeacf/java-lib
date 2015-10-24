@@ -1,2 +1,2 @@
 language: java
-script: mvn clean install compile -f src/structures/pom.xml
+script: mvn clean install compile -e -X -f src/structures/pom.xml
