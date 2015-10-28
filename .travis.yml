@@ -1,6 +1,4 @@
 language: java
 
-install: cd src/structures;mvn install -DskipTests=true
-
-script: cd src/structures;mvn test -e -X
+script: cd src/structures;mvn test
 
