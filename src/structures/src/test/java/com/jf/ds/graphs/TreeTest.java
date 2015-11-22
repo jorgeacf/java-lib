@@ -1,12 +1,10 @@
 package com.jf.ds.graphs;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
-import com.jf.ds.graphs.Tree;
+import static org.junit.Assert.*;
 
-public class TreeTests {
+public class TreeTest {
 
 	@Test
 	public void testEmptyTree() {

@@ -1,14 +1,13 @@
 package com.jf.ds;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 import java.util.Iterator;
 
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
-import com.jf.ds.TopNList;
-
-public class TopNListTests {
+public class TopNListTest {
 
 	@Test
 	public void test() {

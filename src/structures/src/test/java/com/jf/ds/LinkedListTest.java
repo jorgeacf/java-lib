@@ -1,15 +1,12 @@
 package com.jf.ds;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 import java.util.Arrays;
 
-import org.junit.Test;
+import static org.junit.Assert.*;
 
-import com.jf.ds.ILinkedList;
-import com.jf.ds.LinkedList;
-
-public class LinkedListTests {
+public class LinkedListTest {
 
 	@Test
 	public void testEmpty() {

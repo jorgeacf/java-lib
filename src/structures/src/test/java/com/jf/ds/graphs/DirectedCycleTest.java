@@ -1,13 +1,11 @@
 package com.jf.ds.graphs;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
-import com.jf.ds.graphs.DirectedGraph;
-import com.jf.ds.graphs.DirectedCycle;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-public class DirectedCycleTests {
+public class DirectedCycleTest {
 
 	@Test
 	public void testWithoutCycle() {

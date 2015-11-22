@@ -1,12 +1,13 @@
 package com.jf.ds.graphs;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 import java.util.Stack;
 
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
-public class DijkstraShortestPathTests {
+public class DijkstraShortestPathTest {
 
 	@Test
 	public void test1() {

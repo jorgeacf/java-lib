@@ -14,7 +14,7 @@ public final class SortingAlgorithms {
 
         private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {
 
-            System.out.println(String.format("SORT  [%s][%s] %d %d", printArray(a), printArray(aux), lo, hi ));
+            //System.out.println(String.format("SORT  [%s][%s] %d %d", printArray(a), printArray(aux), lo, hi ));
 
             if(hi - lo <= 1) { return; }
 
@@ -22,7 +22,7 @@ public final class SortingAlgorithms {
             sort(a, aux, lo, mid);
             sort(a, aux, mid, hi);
 
-            System.out.println(String.format("MERGE [%s][%s] %d %d %d", printArray(a), printArray(aux), lo, mid, hi ));
+            //System.out.println(String.format("MERGE [%s][%s] %d %d %d", printArray(a), printArray(aux), lo, mid, hi ));
             merge(a, aux, lo, mid, hi);
         }
 

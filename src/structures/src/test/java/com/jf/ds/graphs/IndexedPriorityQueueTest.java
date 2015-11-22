@@ -1,10 +1,8 @@
 package com.jf.ds.graphs;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
-public class IndexedPriorityQueueTests {
+public class IndexedPriorityQueueTest {
 
 	@Test
 	public void testDesc() {
@@ -20,7 +18,7 @@ public class IndexedPriorityQueueTests {
 		while(!pq.isEmpty()) {
 			int i = pq.delMin();
 			
-			System.out.println(i + " " + input[i]);
+			//System.out.println(i + " " + input[i]);
 		}
 	}
 
@@ -38,7 +36,7 @@ public class IndexedPriorityQueueTests {
 		while(!pq.isEmpty()) {
 			int i = pq.delMin();
 			
-			System.out.println(i + " " + input[i]);
+			//System.out.println(i + " " + input[i]);
 		}
 	}
 	

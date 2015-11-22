@@ -1,7 +1,8 @@
 package com.jf.ds.graphs;
 
 import com.jf.ds.Queue;
-import com.jf.ds.Stack;
+
+import java.util.Stack;
 
 public class DepthFirstOrder<E extends Edge> {
 

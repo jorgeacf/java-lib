@@ -1,13 +1,10 @@
 package com.jf.ds;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
-import com.jf.ds.HashMap;
-import com.jf.ds.IMap;
+import static org.junit.Assert.*;
 
-public class HashMapTests {
+public class HashMapTest {
 
 	@Test
 	public void testLastElementWithoutResize() {

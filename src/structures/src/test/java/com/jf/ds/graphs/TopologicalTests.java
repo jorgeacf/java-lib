@@ -1,13 +1,10 @@
 package com.jf.ds.graphs;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 import java.util.Iterator;
 
-import org.junit.Test;
-
-import com.jf.ds.graphs.DirectedGraph;
-import com.jf.ds.graphs.Topological;
+import static org.junit.Assert.*;
 
 public class TopologicalTests {
 
@@ -38,9 +35,10 @@ public class TopologicalTests {
 		Iterator<Integer> order = topological.order().iterator();
 		
 		assertTrue(topological.hasOrder());
-		assertEquals(new Integer(1), order.next());
-		assertEquals(new Integer(2), order.next());
+
 		assertEquals(new Integer(0), order.next());
+		assertEquals(new Integer(2), order.next());
+		assertEquals(new Integer(1), order.next());
 	}
 	
 	@Test
@@ -59,13 +57,14 @@ public class TopologicalTests {
 		Iterator<Integer> order = topological.order().iterator();
 		
 		assertTrue(topological.hasOrder());
-		assertEquals(new Integer(1), order.next());
-		
-		assertEquals(new Integer(2), order.next());
-		assertEquals(new Integer(0), order.next());
-		
-		assertEquals(new Integer(3), order.next());
+
 		assertEquals(new Integer(4), order.next());
+		assertEquals(new Integer(3), order.next());
+		assertEquals(new Integer(0), order.next());
+		assertEquals(new Integer(2), order.next());
+		assertEquals(new Integer(1), order.next());
+		// Confirm that the order is correct
+
 	}
 	
 }

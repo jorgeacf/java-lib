@@ -3,7 +3,7 @@ package com.jf.ds;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class Stack_LinkedList<T> implements Iterable<T>, IStack<T> {
+public class Stack<T> implements Iterable<T>, IStack<T> {
 
 	private Node first;
 	private int size = 0;
@@ -13,7 +13,7 @@ public class Stack_LinkedList<T> implements Iterable<T>, IStack<T> {
 		private Node next;
 	}
 	
-	public Stack_LinkedList() {
+	public Stack() {
 		first = null;
 		size = 0;
 	}

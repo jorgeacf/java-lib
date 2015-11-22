@@ -1,13 +1,10 @@
 package com.jf.ds;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
-import com.jf.ds.IQueue;
-import com.jf.ds.Queue;
+import static org.junit.Assert.assertEquals;
 
-public class QueueTests {
+public class QueueTest {
 
 	@Test(expected=RuntimeException.class)
 	public void testEmptyQueue() {

@@ -1,15 +1,12 @@
 package com.jf.ds.graphs;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 import java.util.Iterator;
 
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-import com.jf.ds.graphs.DepthFirstOrder;
-import com.jf.ds.graphs.DirectedGraph;
-
-public class DepthFirstOrderTests {
+public class DepthFirstOrderTest {
 
 	@Test
 	public void test() {

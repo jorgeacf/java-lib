@@ -1,13 +1,10 @@
 package com.jf.ds;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
-import com.jf.ds.IStack;
-import com.jf.ds.Stack;
+import static org.junit.Assert.assertEquals;
 
-public class StackTests {
+public class StackTest {
 
 	@Test(expected=RuntimeException.class)
 	public void testEmptyStack() {
