@@ -1,4 +1,5 @@
 language: java
 
 script: cd src/structures;mvn test
+script: cd src/algorithms;mvn test
 
