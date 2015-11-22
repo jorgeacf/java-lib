@@ -8,6 +8,10 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+
+        String input = "ABC";
+
+        StringAlgorithms.Permutations.permute(input.toCharArray(), 0 , input.length()-1);
+
     }
 }
