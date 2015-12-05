@@ -2,6 +2,5 @@ language: java
 jdk:
   - oraclejdk8
 
-script: cd src/structures;mvn package
-script: cd src/algorithms;mvn package
+script: cd src/structures;mvn package;cd ../src/algorithms;mvn package
 
