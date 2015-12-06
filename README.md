@@ -1,12 +1,24 @@
 ## Java Library with basic Algorithms and Data Structures </br> 
 
-<a href="https://travis-ci.org/jorgeacf/java-lib">
-    <img src="https://travis-ci.org/jorgeacf/java-lib.svg" />
-</a>
+<table>
+    <tr>
+        <td>
+            <a href="https://travis-ci.org/jorgeacf/java-lib" target="_black">
+                <img src="https://travis-ci.org/jorgeacf/java-lib.svg" />
+            </a>
+        </td>
+        <td>
+            <a href="https://coveralls.io/github/jorgeacf/java-lib?branch=master" target="_black">
+                <img src="https://coveralls.io/repos/jorgeacf/java-lib/badge.svg?branch=master&service=github" alt="Coverage Status" />
+            </a>
+        </td>
+    </tr>
+</table>
 
-<a href='https://coveralls.io/github/jorgeacf/java-lib?branch=master'>
-    <img src='https://coveralls.io/repos/jorgeacf/java-lib/badge.svg?branch=master&service=github' alt='Coverage Status' />
-</a>
+
+
+
+
 
 
 
