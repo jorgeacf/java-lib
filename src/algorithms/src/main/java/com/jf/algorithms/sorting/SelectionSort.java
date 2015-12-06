@@ -1,6 +1,6 @@
 package com.jf.algorithms.sorting;
 
-import com.jf.algorithms.ArrayUtils;
+import com.jf.algorithms.utils.ArrayUtils;
 
 public final class SelectionSort {
 
