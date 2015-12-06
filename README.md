@@ -1,6 +1,6 @@
 ## Java Library with basic Algorithms and Data Structures </br> 
 
-<table>
+<table style="border:none;padding:0;margin:0;">
     <tr>
         <td>
             <a href="https://travis-ci.org/jorgeacf/java-lib" target="_black">
