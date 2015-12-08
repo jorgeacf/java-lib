@@ -18,6 +18,8 @@ public class DirectedEdge implements Edge {
 		return to;
 	}
 
+	public boolean isCycle() { return from == to; }
+
 	@Override
 	public String toString() {
 		return String.format("[%d->%d]", from, to);

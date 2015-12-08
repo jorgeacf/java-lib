@@ -1,4 +1,4 @@
-package com.jf.stuctures.graphs;
+package com.jf.algorithms.graphs;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

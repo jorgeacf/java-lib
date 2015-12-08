@@ -4,6 +4,7 @@ import com.jf.algorithms.utils.ArrayUtils;
 
 public final class RecursiveBinaryInsertion {
 
+    private RecursiveBinaryInsertion() { }
 
     public static void insert(Comparable[] inputArray, Comparable value) {
 

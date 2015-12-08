@@ -1,5 +1,8 @@
-package com.jf.stuctures.graphs;
+package com.jf.algorithms.graphs;
 
+import com.jf.stuctures.graphs.DirectedWeightedEdge;
+import com.jf.stuctures.graphs.DirectedWeightedGraph;
+import com.jf.stuctures.graphs.Graph;
 import org.junit.Test;
 
 import java.util.Stack;
@@ -12,7 +15,7 @@ public class DijkstraShortestPathTest {
 	@Test
 	public void test1() {
 		
-		DirectedGraph<DirectedWeightedEdge> digraph = new DirectedGraph<DirectedWeightedEdge>(6);
+		Graph digraph = new DirectedWeightedGraph(6);
 		
 		digraph.addEdge(new DirectedWeightedEdge(0, 1, 7));
 		digraph.addEdge(new DirectedWeightedEdge(0, 2, 9));
@@ -42,7 +45,7 @@ public class DijkstraShortestPathTest {
 	@Test
 	public void test2() {
 		
-		DirectedGraph<DirectedWeightedEdge> digraph = new DirectedGraph<DirectedWeightedEdge>(6);
+		Graph digraph = new DirectedWeightedGraph(6);
 		
 		digraph.addEdge(new DirectedWeightedEdge(0, 1, 7));
 		digraph.addEdge(new DirectedWeightedEdge(0, 2, 99));
@@ -72,7 +75,7 @@ public class DijkstraShortestPathTest {
 	@Test
 	public void test3() {
 		
-		DirectedGraph<DirectedWeightedEdge> digraph = new DirectedGraph<DirectedWeightedEdge>(6);
+		Graph digraph = new DirectedWeightedGraph(6);
 		
 		digraph.addEdge(new DirectedWeightedEdge(0, 1, 7));
 		digraph.addEdge(new DirectedWeightedEdge(0, 2, 99));

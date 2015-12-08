@@ -1,11 +1,14 @@
-package com.jf.stuctures.graphs;
+package com.jf.algorithms.graphs;
+
+import com.jf.stuctures.graphs.Graph;
+import com.jf.stuctures.graphs.Edge;
 
 public class Topological<E extends Edge> {
 
 	private Iterable<Integer> order;
 	private int[] rank;
 	
-	public Topological(DirectedGraph<E> G) {
+	public Topological(Graph<E> G) {
 		
 		DirectedCycle<E> finder = new DirectedCycle<E>(G);
 		

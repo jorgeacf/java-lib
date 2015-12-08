@@ -1,13 +1,13 @@
 package com.jf.stuctures.graphs;
 
-public class DirectedGraph extends Graph<DirectedEdge> {
+public class DirectedWeightedGraph extends Graph<DirectedWeightedEdge> {
 
-    public DirectedGraph(int V) {
+    public DirectedWeightedGraph(int V) {
         super(V);
     }
 
     @Override
-    protected void validateVertex(DirectedEdge e) {
+    protected void validateVertex(DirectedWeightedEdge e) {
         int v = e.from();
         int w = e.to();
         validateVertex(v);
@@ -15,7 +15,8 @@ public class DirectedGraph extends Graph<DirectedEdge> {
     }
 
     @Override
-    protected void addEdgeX(DirectedEdge e) {
+    protected void addEdgeX(DirectedWeightedEdge e) {
+
         int v = e.from();
         int w = e.to();
         adj[v].add(e);

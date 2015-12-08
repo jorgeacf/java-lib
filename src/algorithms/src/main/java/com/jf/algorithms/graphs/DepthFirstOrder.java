@@ -1,6 +1,8 @@
-package com.jf.stuctures.graphs;
+package com.jf.algorithms.graphs;
 
 import com.jf.stuctures.Queue;
+import com.jf.stuctures.graphs.Graph;
+import com.jf.stuctures.graphs.Edge;
 
 import java.util.Stack;
 
@@ -14,7 +16,7 @@ public class DepthFirstOrder<E extends Edge> {
 	private int preCounter;
 	private int posCounter;
 	
-	public DepthFirstOrder(DirectedGraph<E> G) {
+	public DepthFirstOrder(Graph<E> G) {
 		pre = new int[G.V()];
 		post = new int[G.V()];
 		preorder = new Queue<Integer>();
@@ -26,7 +28,7 @@ public class DepthFirstOrder<E extends Edge> {
 		}
 	}
 	
-	private void dfs(DirectedGraph<E> G, int v) {
+	private void dfs(Graph<E> G, int v) {
 		marked[v] = true;
 		pre[v] = preCounter++;
 		preorder.enqueue(v);

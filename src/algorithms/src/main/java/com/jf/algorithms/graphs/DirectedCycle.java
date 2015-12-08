@@ -1,4 +1,7 @@
-package com.jf.stuctures.graphs;
+package com.jf.algorithms.graphs;
+
+import com.jf.stuctures.graphs.Graph;
+import com.jf.stuctures.graphs.Edge;
 
 import java.util.Stack;
 
@@ -9,7 +12,7 @@ public class DirectedCycle<E extends Edge> {
 	private boolean[] onStack;
 	private Stack<Integer> cycle;
 	
-	public DirectedCycle(DirectedGraph<E> G) {
+	public DirectedCycle(Graph<E> G) {
 		marked = new boolean[G.V()];
 		onStack = new boolean[G.V()];
 		edgeTo = new int[G.V()];
@@ -22,7 +25,7 @@ public class DirectedCycle<E extends Edge> {
 	}
 	
 	
-	private void dfs(DirectedGraph<E> G, int v) {
+	private void dfs(Graph<E> G, int v) {
 		
 		onStack[v] = true;
 		marked[v] = true;

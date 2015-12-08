@@ -1,5 +1,8 @@
-package com.jf.stuctures.graphs;
+package com.jf.algorithms.graphs;
 
+import com.jf.stuctures.graphs.DirectedEdge;
+import com.jf.stuctures.graphs.DirectedGraph;
+import com.jf.stuctures.graphs.Graph;
 import org.junit.Test;
 
 import java.util.Iterator;
@@ -11,7 +14,7 @@ public class DepthFirstOrderTest {
 	@Test
 	public void test() {
 		
-		DirectedGraph<DirectedEdge> digraph = new DirectedGraph<DirectedEdge>(6);
+		Graph<DirectedEdge> digraph = new DirectedGraph(6);
 		
 		digraph.addEdge(new DirectedEdge(1, 0));
 		digraph.addEdge(new DirectedEdge(1, 2));

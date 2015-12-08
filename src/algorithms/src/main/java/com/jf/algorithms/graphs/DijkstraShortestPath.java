@@ -1,4 +1,7 @@
-package com.jf.stuctures.graphs;
+package com.jf.algorithms.graphs;
+
+import com.jf.stuctures.graphs.Graph;
+import com.jf.stuctures.graphs.DirectedWeightedEdge;
 
 import java.util.Stack;
 
@@ -8,7 +11,7 @@ public class DijkstraShortestPath implements ShortestPath<DirectedWeightedEdge> 
 	private DirectedWeightedEdge[] edgeTo;
 	private IndexedPriorityQueue<Double> pq;
 	
-	public DijkstraShortestPath(DirectedGraph<DirectedWeightedEdge> G, int s) {
+	public DijkstraShortestPath(Graph<DirectedWeightedEdge> G, int s) {
 		
 		for(DirectedWeightedEdge e : G.edges()) {
 			if(e.weight() < 0) {

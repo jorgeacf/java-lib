@@ -1,5 +1,8 @@
-package com.jf.stuctures.graphs;
+package com.jf.algorithms.graphs;
 
+import com.jf.stuctures.graphs.DirectedEdge;
+import com.jf.stuctures.graphs.DirectedGraph;
+import com.jf.stuctures.graphs.Graph;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
@@ -10,7 +13,7 @@ public class DirectedCycleTest {
 	@Test
 	public void testWithoutCycle() {
 		
-		DirectedGraph<DirectedEdge> digraph = new DirectedGraph<DirectedEdge>(3);
+		Graph<DirectedEdge> digraph = new DirectedGraph(3);
 		
 		digraph.addEdge(new DirectedEdge(1, 0));
 		digraph.addEdge(new DirectedEdge(1, 2));
@@ -23,7 +26,7 @@ public class DirectedCycleTest {
 	@Test
 	public void testWithCycle() {
 		
-		DirectedGraph<DirectedEdge> digraph = new DirectedGraph<DirectedEdge>(3);
+		Graph<DirectedEdge> digraph = new DirectedGraph(3);
 		
 		digraph.addEdge(new DirectedEdge(1, 0));
 		digraph.addEdge(new DirectedEdge(0, 2));
@@ -37,7 +40,7 @@ public class DirectedCycleTest {
 	@Test
 	public void testWithoutCycle2() {
 		
-		DirectedGraph<DirectedEdge> digraph = new DirectedGraph<DirectedEdge>(5);
+		Graph<DirectedEdge> digraph = new DirectedGraph(5);
 		
 		digraph.addEdge(new DirectedEdge(0, 1));
 		digraph.addEdge(new DirectedEdge(1, 2));
@@ -56,7 +59,7 @@ public class DirectedCycleTest {
 	@Test
 	public void testWithCycle2() {
 		
-		DirectedGraph<DirectedEdge> digraph = new DirectedGraph<DirectedEdge>(5);
+		Graph<DirectedEdge> digraph = new DirectedGraph(5);
 		
 		digraph.addEdge(new DirectedEdge(0, 1));
 		digraph.addEdge(new DirectedEdge(1, 2));

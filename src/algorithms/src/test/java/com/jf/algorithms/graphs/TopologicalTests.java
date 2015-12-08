@@ -1,5 +1,8 @@
-package com.jf.stuctures.graphs;
+package com.jf.algorithms.graphs;
 
+import com.jf.stuctures.graphs.DirectedEdge;
+import com.jf.stuctures.graphs.DirectedGraph;
+import com.jf.stuctures.graphs.Graph;
 import org.junit.Test;
 
 import java.util.Iterator;
@@ -11,7 +14,7 @@ public class TopologicalTests {
 	@Test
 	public void testNoOrder() {
 		
-		DirectedGraph<DirectedEdge> digraph = new DirectedGraph<DirectedEdge>(3);
+		Graph<DirectedEdge> digraph = new DirectedGraph(3);
 
 		digraph.addEdge(new DirectedEdge(1, 2));
 		digraph.addEdge(new DirectedEdge(1, 0));
@@ -25,7 +28,7 @@ public class TopologicalTests {
 	@Test
 	public void testThreeV() {
 		
-		DirectedGraph<DirectedEdge> digraph = new DirectedGraph<DirectedEdge>(3);
+		Graph<DirectedEdge> digraph = new DirectedGraph(3);
 
 		digraph.addEdge(new DirectedEdge(1, 2));
 		digraph.addEdge(new DirectedEdge(1, 0));
@@ -44,7 +47,7 @@ public class TopologicalTests {
 	@Test
 	public void testFiveV() {
 		
-		DirectedGraph<DirectedEdge> digraph = new DirectedGraph<DirectedEdge>(5);
+		Graph<DirectedEdge> digraph = new DirectedGraph(5);
 
 		digraph.addEdge(new DirectedEdge(1, 2));
 		digraph.addEdge(new DirectedEdge(1, 0));
