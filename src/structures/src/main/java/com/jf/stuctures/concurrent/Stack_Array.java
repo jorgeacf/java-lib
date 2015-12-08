@@ -1,10 +1,8 @@
 package com.jf.stuctures.concurrent;
 
-import com.jf.stuctures.IStack;
-
 import java.util.Iterator;
 
-public class Stack_Array<T> implements Iterable<T>, IStack<T> {
+public class Stack_Array<T> implements Iterable<T> {
 
     public boolean isEmpty() {
         return false;

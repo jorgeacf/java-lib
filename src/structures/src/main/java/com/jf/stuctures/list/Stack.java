@@ -1,23 +1,21 @@
-package com.jf.stuctures;
+package com.jf.stuctures.list;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class Queue<T> implements Iterable<T>, IQueue<T> {
+public class Stack<T> implements Iterable<T> {
 
 	private Node first;
-	private Node last;
-	
-	private int size;
+	private int size = 0;
 	
 	private class Node {
 		private T value;
 		private Node next;
 	}
 	
-	public Queue() {
+	public Stack() {
 		first = null;
-		last = null;
+		size = 0;
 	}
 	
 	public boolean isEmpty() {
@@ -28,31 +26,26 @@ public class Queue<T> implements Iterable<T>, IQueue<T> {
 		return size;
 	}
 	
-	public int length() {
-		return size;
-	}
-	
-	public void enqueue(T item) {
-		Node n = new Node();
-		n.value = item;
-		if(isEmpty()){
-			first = n;
-			last = n;
-		}
-		else {
-			last.next = n;
-			last = n;
-		}
+	public void push(T item) {
+		
+		Node oldfirst = first;
+		first = new Node();
+		first.value = item;
+		first.next = oldfirst;
 		size++;
 	}
 	
-	public T dequeue() {
-		if(isEmpty()) { throw new RuntimeException("Queue empty"); }
+	public T pop() {
+		if(isEmpty()) { throw new RuntimeException("Stack empy"); }
 		T item = first.value;
 		first = first.next;
 		size--;
-		if(isEmpty()) { last = null; }
-		return item;
+		return item;	
+	}
+	
+	public T peek() {
+		if(isEmpty()) { throw new RuntimeException("Stack empy"); }
+		return first.value;
 	}
 	
 	public String toString() {

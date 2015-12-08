@@ -1,4 +1,4 @@
-package com.jf.stuctures;
+package com.jf.stuctures.list;
 
 import org.junit.Test;
 
@@ -9,7 +9,7 @@ public class QueueTest {
 	@Test(expected=RuntimeException.class)
 	public void testEmptyQueue() {
 		
-		IQueue<Integer> queue = new Queue<Integer>();
+		Queue<Integer> queue = new Queue<Integer>();
 	
 		queue.dequeue();
 		
@@ -18,7 +18,7 @@ public class QueueTest {
 	@Test
 	public void testRemoveThreeItems() {
 	
-		IQueue<Integer> queue = new Queue<Integer>();
+		Queue<Integer> queue = new Queue<Integer>();
 		
 		queue.enqueue(1);
 		queue.enqueue(2);

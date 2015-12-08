@@ -1,4 +1,4 @@
-package com.jf.stuctures;
+package com.jf.stuctures.list;
 
 import org.junit.Test;
 
@@ -9,7 +9,7 @@ public class StackTest {
 	@Test(expected=RuntimeException.class)
 	public void testEmptyStack() {
 		
-		IStack<Integer> stack = new Stack<Integer>();
+		Stack<Integer> stack = new Stack<Integer>();
 	
 		stack.pop();
 		
@@ -18,7 +18,7 @@ public class StackTest {
 	@Test
 	public void testThreeItems() {
 		
-		IStack<Integer> stack = new Stack<Integer>();
+		Stack<Integer> stack = new Stack<Integer>();
 		
 		stack.push(1);
 		stack.push(2);

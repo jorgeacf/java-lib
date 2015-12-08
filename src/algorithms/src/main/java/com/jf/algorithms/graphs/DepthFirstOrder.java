@@ -1,6 +1,6 @@
 package com.jf.algorithms.graphs;
 
-import com.jf.stuctures.Queue;
+import com.jf.stuctures.list.Queue;
 import com.jf.stuctures.graphs.Graph;
 import com.jf.stuctures.graphs.Edge;
 

@@ -1,9 +1,9 @@
-package com.jf.stuctures;
+package com.jf.stuctures.map;
 
 import java.util.LinkedList;
 
 
-public class HashMap<K,V> implements IMap<K, V> {
+public class HashMap<K,V> {
 
 	private LinkedList<HashEntry<K,V>>[] map = null;
 

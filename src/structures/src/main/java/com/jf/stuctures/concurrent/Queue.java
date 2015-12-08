@@ -1,8 +1,6 @@
 package com.jf.stuctures.concurrent;
 
-import com.jf.stuctures.IQueue;
-
-public class Queue<T> implements IQueue<T> {
+public class Queue<T> {
 
 	private final Object lock = new Object();
 	private Node<T> first;

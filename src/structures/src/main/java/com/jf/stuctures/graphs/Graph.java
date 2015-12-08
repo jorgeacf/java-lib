@@ -1,6 +1,6 @@
 package com.jf.stuctures.graphs;
 
-import com.jf.stuctures.Bag;
+import com.jf.stuctures.list.Bag;
 
 import java.util.LinkedList;
 import java.util.List;

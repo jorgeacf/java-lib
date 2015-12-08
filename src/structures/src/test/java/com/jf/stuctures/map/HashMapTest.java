@@ -1,4 +1,4 @@
-package com.jf.stuctures;
+package com.jf.stuctures.map;
 
 import org.junit.Test;
 
@@ -9,7 +9,7 @@ public class HashMapTest {
 	@Test
 	public void testLastElementWithoutResize() {
 		
-		IMap<Integer, String> map = new HashMap<Integer, String>();
+		HashMap<Integer, String> map = new HashMap<Integer, String>();
 		
 		int key = 127;
 		
@@ -24,8 +24,8 @@ public class HashMapTest {
 	
 	@Test
 	public void testOneElementAfterTheInternalSizeLimit() {
-		
-		IMap<Integer, String> map = new HashMap<Integer, String>();
+
+		HashMap<Integer, String> map = new HashMap<Integer, String>();
 		
 		int key = 128;
 		
@@ -41,8 +41,8 @@ public class HashMapTest {
 	
 	@Test
 	public void testFullInternalArray() {
-		
-		IMap<Integer, String> map = new HashMap<Integer, String>();
+
+		HashMap<Integer, String> map = new HashMap<Integer, String>();
 		
 		for(int i = 0; i < 10; i++) {
 			map.put(i, "V" + i);
@@ -57,8 +57,8 @@ public class HashMapTest {
 	
 	@Test
 	public void testRemove() {
-		
-		IMap<Integer, String> map = new HashMap<Integer, String>();
+
+		HashMap<Integer, String> map = new HashMap<Integer, String>();
 		
 		int key = 127;
 		

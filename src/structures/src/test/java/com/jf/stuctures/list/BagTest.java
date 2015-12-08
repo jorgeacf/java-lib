@@ -1,4 +1,4 @@
-package com.jf.stuctures;
+package com.jf.stuctures.list;
 
 import org.junit.Test;
 

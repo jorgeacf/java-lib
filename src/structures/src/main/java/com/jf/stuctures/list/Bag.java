@@ -1,4 +1,4 @@
-package com.jf.stuctures;
+package com.jf.stuctures.list;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -6,12 +6,7 @@ import java.util.NoSuchElementException;
 public class Bag<T> implements Iterable<T> {
 
 	private int N;
-	private Node<T> first;
-	
-	private static class Node<T> {
-		private T t;
-		private Node<T> next;
-	}
+	private SingleLinkedNode<T> first;
 	
 	public Bag() {
 		first = null;
@@ -27,10 +22,9 @@ public class Bag<T> implements Iterable<T> {
 	}
 	
 	public void add(T t) {
-		Node<T> oldFirst = first;
-		first = new Node<T>();
-		first.t = t;
-		first.next = oldFirst;
+		SingleLinkedNode<T> oldFirst = first;
+		first = new SingleLinkedNode<T>(t);
+		first.setNext(oldFirst);
 		N++;
 	}
 	
@@ -40,9 +34,9 @@ public class Bag<T> implements Iterable<T> {
 	}
 
 	private class ListIterator<T> implements Iterator<T> {
-		private Node<T> current;
+		private SingleLinkedNode<T> current;
 		
-		public ListIterator(Node<T> first) {
+		public ListIterator(SingleLinkedNode<T> first) {
 			current = first;
 		}
 		
@@ -52,8 +46,8 @@ public class Bag<T> implements Iterable<T> {
 
 		public T next() {
 			if(!hasNext()) throw new NoSuchElementException();
-			T item = current.t;
-			current = current.next;
+			T item = current.getValue();
+			current = current.getNext();
 			return item;
 		}
 		
