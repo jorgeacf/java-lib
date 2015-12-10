@@ -1,7 +1,7 @@
 package com.jf.algorithms.graphs;
 
-import com.jf.stuctures.graphs.DirectedEdge;
-import com.jf.stuctures.graphs.Graph;
+import com.jf.structures.graphs.DirectedEdge;
+import com.jf.structures.graphs.Graph;
 import junit.framework.TestCase;
 
 public class GraphGeneratorTest extends TestCase {

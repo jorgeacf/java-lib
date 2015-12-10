@@ -1,8 +1,8 @@
 package com.jf.algorithms.graphs;
 
-import com.jf.stuctures.list.Queue;
-import com.jf.stuctures.graphs.Graph;
-import com.jf.stuctures.graphs.Edge;
+import com.jf.structures.list.Queue;
+import com.jf.structures.graphs.Graph;
+import com.jf.structures.graphs.Edge;
 
 import java.util.Stack;
 

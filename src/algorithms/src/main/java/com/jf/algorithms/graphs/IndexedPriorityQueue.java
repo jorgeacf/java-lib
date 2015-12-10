@@ -3,20 +3,20 @@ package com.jf.algorithms.graphs;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class IndexedPriorityQueue<Key extends Comparable<Key>> implements Iterable<Integer> {
+public class IndexedPriorityQueue<K extends Comparable<K>> implements Iterable<Integer> {
 
 	private int maxN;
 	private int N;
 	private int[] pq;
 	private int[] qp;
-	private Key[] keys;
-	
+	private K[] keys;
+
 	@SuppressWarnings("unchecked")
 	public IndexedPriorityQueue(int maxN) {
 		
 		if(maxN < 0) throw new IllegalArgumentException();
 		this.maxN = maxN;
-		keys = (Key[]) new Comparable[maxN + 1];
+		keys = (K[]) new Comparable[maxN + 1];
 		pq = new int[maxN + 1];
 		qp = new int[maxN + 1];
 		
@@ -39,7 +39,7 @@ public class IndexedPriorityQueue<Key extends Comparable<Key>> implements Iterab
 		return qp[i] != -1;
 	}
 	
-	public void insert(int i, Key key) {
+	public void insert(int i, K key) {
 		if(i < 0 || i >= maxN) throw new IndexOutOfBoundsException();
 		if(contains(i)) throw new IllegalArgumentException("Index is already in the priority queue");
 		N++;
@@ -68,9 +68,11 @@ public class IndexedPriorityQueue<Key extends Comparable<Key>> implements Iterab
 	}
 	
 	private void exch(int i, int j) {
+
 		int swap = pq[i];
 		pq[i] = pq[j];
 		pq[j] = swap;
+
 		qp[pq[i]] = i;
 		qp[pq[j]] = j;
 	}
@@ -98,7 +100,7 @@ public class IndexedPriorityQueue<Key extends Comparable<Key>> implements Iterab
 		return null;
 	}
 
-	public void decreaseKey(int i, Key key) {
+	public void decreaseKey(int i, K key) {
 		
 		if(i < 0 || i >= maxN) 			{ throw new IndexOutOfBoundsException(); }
 		if(!contains(i)) 				{ throw new NoSuchElementException("index is not in the priority queue"); }

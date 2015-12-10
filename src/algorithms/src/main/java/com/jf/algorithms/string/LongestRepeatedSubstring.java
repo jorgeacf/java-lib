@@ -1,6 +1,6 @@
 package com.jf.algorithms.string;
 
-import com.jf.stuctures.SuffixArray;
+import com.jf.structures.SuffixArray;
 
 public class LongestRepeatedSubstring {
 

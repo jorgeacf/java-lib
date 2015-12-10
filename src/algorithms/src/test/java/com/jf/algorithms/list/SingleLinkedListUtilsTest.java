@@ -1,6 +1,6 @@
 package com.jf.algorithms.list;
 
-import com.jf.stuctures.list.SingleLinkedList;
+import com.jf.structures.list.SingleLinkedList;
 import junit.framework.TestCase;
 
 import java.util.Arrays;
@@ -29,7 +29,7 @@ public class SingleLinkedListUtilsTest extends TestCase {
 
         Integer[] output = SingleLinkedListUtils.toArray(list);
 
-        assertTrue(Arrays.equals(new Integer[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }, output));
+        assertTrue(Arrays.equals(new Integer[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, output));
     }
 
 

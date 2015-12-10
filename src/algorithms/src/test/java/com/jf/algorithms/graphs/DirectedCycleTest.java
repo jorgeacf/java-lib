@@ -1,8 +1,8 @@
 package com.jf.algorithms.graphs;
 
-import com.jf.stuctures.graphs.DirectedEdge;
-import com.jf.stuctures.graphs.DirectedGraph;
-import com.jf.stuctures.graphs.Graph;
+import com.jf.structures.graphs.DirectedEdge;
+import com.jf.structures.graphs.DirectedGraph;
+import com.jf.structures.graphs.Graph;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;

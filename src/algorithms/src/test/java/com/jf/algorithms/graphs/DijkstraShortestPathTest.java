@@ -1,8 +1,8 @@
 package com.jf.algorithms.graphs;
 
-import com.jf.stuctures.graphs.DirectedWeightedEdge;
-import com.jf.stuctures.graphs.DirectedWeightedGraph;
-import com.jf.stuctures.graphs.Graph;
+import com.jf.structures.graphs.DirectedWeightedEdge;
+import com.jf.structures.graphs.DirectedWeightedGraph;
+import com.jf.structures.graphs.Graph;
 import org.junit.Test;
 
 import java.util.Stack;
