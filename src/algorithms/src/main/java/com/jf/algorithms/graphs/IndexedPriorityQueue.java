@@ -78,9 +78,9 @@ public class IndexedPriorityQueue<K extends Comparable<K>> implements Iterable<I
 	}
 	
 	private void swim(int k) {
-		while(k > 1 && greater(k/2, k)) {
+		while(k > 1 && greater(k/2, k)) { // greater(parent, current)
 			exch(k, k/2);
-			k = k/2;
+			k = k/2; // current = parent
 		}
 	}
 	

@@ -1,8 +1,8 @@
 package com.jf.structures.graphs;
 
-public class DirectedWeightedGraph extends Graph<UndirectedWeightedEdge> {
+public class UndirectedWeightedGraph extends Graph<UndirectedWeightedEdge> {
 
-    public DirectedWeightedGraph(int V) {
+    public UndirectedWeightedGraph(int V) {
         super(V);
     }
 
@@ -19,7 +19,12 @@ public class DirectedWeightedGraph extends Graph<UndirectedWeightedEdge> {
 
         int v = e.from();
         int w = e.to();
+
         adj[v].add(e);
+        adj[w].add(e);
+
         indegree[w]++;
+        indegree[v]++;
+
     }
 }

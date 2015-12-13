@@ -1,6 +1,6 @@
 package com.jf.algorithms.string;
 
-import com.jf.algorithms.utils.CheckUtils;
+import com.jf.utils.CheckUtils;
 
 public final class ReverseExceptChars {
 

@@ -24,5 +24,8 @@ public class DirectedEdge implements Edge {
 	public String toString() {
 		return String.format("[%d->%d]", from, to);
 	}
-	
+
+	public int compareTo(Edge o) {
+		return 0;
+	}
 }

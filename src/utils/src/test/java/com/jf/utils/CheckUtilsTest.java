@@ -1,4 +1,4 @@
-package com.jf.algorithms.utils;
+package com.jf.utils;
 
 import junit.framework.TestCase;
 
@@ -12,7 +12,7 @@ public class CheckUtilsTest extends TestCase {
 
             CheckUtils.isNull(array, "argName");
 
-            fail("Should throw IllegalArgumentException");
+            TestCase.fail("Should throw IllegalArgumentException");
         }
         catch (IllegalArgumentException ex) {
 
@@ -27,7 +27,7 @@ public class CheckUtilsTest extends TestCase {
 
             CheckUtils.isNull(item, "argName");
 
-            fail("Should throw IllegalArgumentException");
+            TestCase.fail("Should throw IllegalArgumentException");
         }
         catch (IllegalArgumentException ex) {
 

@@ -1,4 +1,4 @@
-package com.jf.algorithms.utils;
+package com.jf.utils;
 
 public final class ArrayUtils {
 

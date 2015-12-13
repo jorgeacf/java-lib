@@ -47,5 +47,8 @@ public class DirectedWeightedEdge implements Edge {
 		return hash;
 		
 	}
-	
+
+	public int compareTo(Edge o) {
+		return 0;
+	}
 }

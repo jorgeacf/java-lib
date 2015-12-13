@@ -1,6 +1,6 @@
 package com.jf.algorithms.list;
 
-import com.jf.algorithms.utils.CheckUtils;
+import com.jf.utils.CheckUtils;
 import com.jf.structures.list.SingleLinkedList;
 
 import java.util.Iterator;

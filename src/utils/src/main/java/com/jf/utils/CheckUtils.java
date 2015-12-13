@@ -1,4 +1,4 @@
-package com.jf.algorithms.utils;
+package com.jf.utils;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

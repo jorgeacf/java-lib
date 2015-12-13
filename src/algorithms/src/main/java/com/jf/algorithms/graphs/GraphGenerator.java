@@ -1,6 +1,6 @@
 package com.jf.algorithms.graphs;
 
-import com.jf.algorithms.utils.RandomUtils;
+import com.jf.utils.RandomUtils;
 import com.jf.structures.graphs.DirectedEdge;
 import com.jf.structures.graphs.DirectedGraph;
 import com.jf.structures.graphs.Graph;

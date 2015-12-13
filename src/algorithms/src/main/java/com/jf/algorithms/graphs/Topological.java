@@ -3,6 +3,11 @@ package com.jf.algorithms.graphs;
 import com.jf.structures.graphs.Graph;
 import com.jf.structures.graphs.Edge;
 
+/**
+ *  This class compute the topological ordering of a DAG or edge-weighted DAG.
+ *  The running cost is O(E + V) time.
+ * @param <E> Type of edge in the graph
+ */
 public class Topological<E extends Edge> {
 
 	private Iterable<Integer> order;

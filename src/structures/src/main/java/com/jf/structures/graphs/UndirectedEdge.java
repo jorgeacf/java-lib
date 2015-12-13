@@ -10,4 +10,8 @@ public class UndirectedEdge implements Edge {
     public int to() {
         return 0;
     }
+
+    public int compareTo(Edge o) {
+        return 0;
+    }
 }

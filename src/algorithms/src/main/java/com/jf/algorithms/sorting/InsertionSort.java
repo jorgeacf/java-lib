@@ -1,6 +1,6 @@
 package com.jf.algorithms.sorting;
 
-import com.jf.algorithms.utils.ArrayUtils;
+import com.jf.utils.ArrayUtils;
 
 public final class InsertionSort {
 
