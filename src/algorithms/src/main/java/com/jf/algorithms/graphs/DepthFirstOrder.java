@@ -1,12 +1,12 @@
 package com.jf.algorithms.graphs;
 
+import com.jf.structures.graphs.DirectedEdge;
 import com.jf.structures.list.Queue;
 import com.jf.structures.graphs.Graph;
-import com.jf.structures.graphs.Edge;
 
 import java.util.Stack;
 
-public class DepthFirstOrder<E extends Edge> {
+public class DepthFirstOrder<E extends DirectedEdge> {
 
 	private boolean[] marked;
 	private int[] pre;
@@ -32,7 +32,7 @@ public class DepthFirstOrder<E extends Edge> {
 		marked[v] = true;
 		pre[v] = preCounter++;
 		preorder.enqueue(v);
-		for(Edge e : G.adj(v)) {
+		for(DirectedEdge e : G.adj(v)) {
 			
 			int w = e.to();
 			if(!marked[w]) {

@@ -33,6 +33,22 @@ public class Bag<T> implements Iterable<T> {
 		return new ListIterator<T>(first);
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+
+		Node current = first;
+		while (current != null) {
+			if(current != first) { sb.append(", "); }
+			sb.append(current.getValue());
+		}
+
+		sb.insert(0, "[");
+		sb.insert(sb.length(), "]");
+
+		return sb.toString();
+	}
+
 	private class ListIterator<T> implements Iterator<T> {
 		private SingleLinkedNode<T> current;
 		

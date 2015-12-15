@@ -1,6 +1,6 @@
 package com.jf.structures.connectivity;
 
-public class QuickFind implements UF {
+public class QuickFind implements UnionFind {
 
     private int[] id;
     private int count;

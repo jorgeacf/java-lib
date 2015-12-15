@@ -1,11 +1,11 @@
 package com.jf.algorithms.graphs;
 
+import com.jf.structures.graphs.DirectedEdge;
 import com.jf.structures.graphs.Graph;
-import com.jf.structures.graphs.Edge;
 
 import java.util.Stack;
 
-public class DirectedCycle<E extends Edge> {
+public class DirectedCycle<E extends DirectedEdge> {
 
 	private boolean[] marked;
 	private int[] edgeTo;
@@ -30,7 +30,7 @@ public class DirectedCycle<E extends Edge> {
 		onStack[v] = true;
 		marked[v] = true;
 		
-		for(Edge e : G.adj(v)) {
+		for(DirectedEdge e : G.adj(v)) {
 			
 			int w = e.to();
 			if(cycle != null) {

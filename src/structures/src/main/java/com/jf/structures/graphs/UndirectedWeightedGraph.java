@@ -8,8 +8,8 @@ public class UndirectedWeightedGraph extends Graph<UndirectedWeightedEdge> {
 
     @Override
     protected void validateVertex(UndirectedWeightedEdge e) {
-        int v = e.from();
-        int w = e.to();
+        int v = e.either();
+        int w = e.other(e.either());
         validateVertex(v);
         validateVertex(w);
     }
@@ -17,8 +17,8 @@ public class UndirectedWeightedGraph extends Graph<UndirectedWeightedEdge> {
     @Override
     protected void addEdgeX(UndirectedWeightedEdge e) {
 
-        int v = e.from();
-        int w = e.to();
+        int v = e.either();
+        int w = e.other(e.either());
 
         adj[v].add(e);
         adj[w].add(e);

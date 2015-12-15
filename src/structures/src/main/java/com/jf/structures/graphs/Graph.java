@@ -5,7 +5,7 @@ import com.jf.structures.list.Bag;
 import java.util.LinkedList;
 import java.util.List;
 
-public abstract class Graph<EE extends Edge> {
+public abstract class Graph<EE> {
 
 	protected final int V;
 	protected int E;

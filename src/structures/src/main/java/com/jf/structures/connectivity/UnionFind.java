@@ -1,6 +1,6 @@
 package com.jf.structures.connectivity;
 
-public interface UF {
+public interface UnionFind {
 
     void union(int p, int q);
     int find(int p);

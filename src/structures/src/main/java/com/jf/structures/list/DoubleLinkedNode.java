@@ -17,4 +17,10 @@ public class DoubleLinkedNode<T> extends SingleLinkedNode<T> {
     public void setPrevious(Node previous) {
         this.previous = previous;
     }
+
+    @Override
+    public String toString() {
+        return String.format("[%s]", getValue());
+    }
+
 }

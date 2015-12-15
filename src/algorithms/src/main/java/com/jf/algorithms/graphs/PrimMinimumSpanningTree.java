@@ -42,7 +42,7 @@ public final class PrimMinimumSpanningTree {
     private void scan(UndirectedWeightedGraph graph, int v) {
         marked[v] = true;
         for(UndirectedWeightedEdge e : graph.adj(v)) {
-            int w = e.to();
+            int w = e.other(e.either());
             if(marked[w]) { continue; }
             if(e.weight() < distTo[w]) {
                 distTo[w] = e.weight();

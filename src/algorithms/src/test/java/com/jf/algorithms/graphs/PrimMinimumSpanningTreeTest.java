@@ -32,7 +32,7 @@ public class PrimMinimumSpanningTreeTest extends TestCase {
         double weight = mst.weight();
 
         for(UndirectedWeightedEdge e : mst.edges()) {
-            System.out.println(String.format("%d %d %.2f", e.from(), e.to(), e.weight()));
+            System.out.println(String.format("%d %d %.2f", e.either(), e.other(e.either()), e.weight()));
         }
 
         assertEquals(1.84, weight);

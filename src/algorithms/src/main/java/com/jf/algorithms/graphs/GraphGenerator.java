@@ -4,7 +4,6 @@ import com.jf.utils.RandomUtils;
 import com.jf.structures.graphs.DirectedEdge;
 import com.jf.structures.graphs.DirectedGraph;
 import com.jf.structures.graphs.Graph;
-import com.jf.structures.graphs.Edge;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -20,7 +19,7 @@ public final class GraphGenerator {
 
         Graph graph = new DirectedGraph(V);
 
-        Set<Edge> edgesSet = new LinkedHashSet<Edge>();
+        Set<DirectedEdge> edgesSet = new LinkedHashSet<DirectedEdge>();
 
         while(graph.E() < E) {
 
@@ -33,7 +32,6 @@ public final class GraphGenerator {
                 edgesSet.add(edge);
                 graph.addEdge(edge);
             }
-
         }
 
         return graph;

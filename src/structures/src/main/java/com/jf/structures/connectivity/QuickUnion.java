@@ -1,6 +1,6 @@
 package com.jf.structures.connectivity;
 
-public class QuickUnion implements UF {
+public class QuickUnion implements UnionFind {
 
     private int[] parent;
     private int count;

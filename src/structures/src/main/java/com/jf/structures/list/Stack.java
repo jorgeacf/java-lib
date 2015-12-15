@@ -5,14 +5,9 @@ import java.util.NoSuchElementException;
 
 public class Stack<T> implements Iterable<T> {
 
-	private Node first;
+	private SingleLinkedNode<T> first;
 	private int size = 0;
-	
-	private class Node {
-		private T value;
-		private Node next;
-	}
-	
+
 	public Stack() {
 		first = null;
 		size = 0;
@@ -28,31 +23,40 @@ public class Stack<T> implements Iterable<T> {
 	
 	public void push(T item) {
 		
-		Node oldfirst = first;
-		first = new Node();
-		first.value = item;
-		first.next = oldfirst;
+		SingleLinkedNode<T> oldfirst = first;
+		first = new SingleLinkedNode(item);
+		first.setValue(item);
+		first.setNext(oldfirst);
 		size++;
 	}
 	
 	public T pop() {
-		if(isEmpty()) { throw new RuntimeException("Stack empy"); }
-		T item = first.value;
-		first = first.next;
+		if(isEmpty()) { throw new RuntimeException("Stack empty"); }
+		T item = first.getValue();
+		first = first.getNext();
 		size--;
 		return item;	
 	}
 	
 	public T peek() {
-		if(isEmpty()) { throw new RuntimeException("Stack empy"); }
-		return first.value;
+		if(isEmpty()) { throw new RuntimeException("Stack empty"); }
+		return first.getValue();
 	}
-	
+
+	@Override
 	public String toString() {
+
 		StringBuilder sb = new StringBuilder();
-		for(T item : this) {
-			sb.append(item + " ");
+
+		Node current = first;
+		while (current != null) {
+			if(current != first) { sb.append(", "); }
+			sb.append(current.getValue());
 		}
+
+		sb.insert(0, "[");
+		sb.insert(sb.length(), "]");
+
 		return sb.toString();
 	}
 
@@ -62,7 +66,7 @@ public class Stack<T> implements Iterable<T> {
 	
 	private class ListIterator implements Iterator<T> {
 
-		private Node current = first;
+		private SingleLinkedNode<T> current = first;
 		
 		public boolean hasNext() {
 			return current != null;
@@ -70,8 +74,8 @@ public class Stack<T> implements Iterable<T> {
 
 		public T next() {
 			if(!hasNext()) { throw new NoSuchElementException(); }
-			T item = current.value;
-			current = current.next;
+			T item = current.getValue();
+			current = current.getNext();
 			return item;
 		}
 		

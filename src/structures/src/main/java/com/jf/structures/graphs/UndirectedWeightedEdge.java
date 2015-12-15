@@ -1,44 +1,26 @@
 package com.jf.structures.graphs;
 
-public class UndirectedWeightedEdge implements Edge {
+public class UndirectedWeightedEdge extends UndirectedEdge {
 
-    private final int from;
-    private final int to;
     private final double weight;
 
-    public UndirectedWeightedEdge(int from, int to, double weight) {
-        this.from = from;
-        this.to = to;
+    public UndirectedWeightedEdge(int v, int w, double weight)  {
+        super(v, w);
         this.weight = weight;
-    }
-
-    public int from() {
-        return from;
-    }
-
-    public int to() {
-        return to;
     }
 
     public double weight() { return weight; }
 
-    public int compareTo(Edge edge) {
-        int BEFORE = -1;
-        int EQUAL = 0;
-        int AFTER = 1;
+    public int compareTo(UndirectedWeightedEdge that) {
 
-        if(this == edge) { return EQUAL; }
+        if(this.weight < that.weight) { return -1; }
+        if(this.weight > that.weight) { return 1; }
 
-        UndirectedWeightedEdge that = (UndirectedWeightedEdge)edge;
-        if(this.from() < that.from()) { return BEFORE; }
-        if(this.from() > that.from()) { return AFTER; }
+        return super.compareTo(that);
+    }
 
-        if(this.to() < that.to()) { return BEFORE; }
-        if(this.to() > that.to()) { return AFTER; }
-
-        if(this.weight() < that.weight()) { return BEFORE; }
-        if(this.weight() > that.weight()) { return AFTER; }
-
-        return EQUAL;
+    @Override
+    public String toString() {
+        return String.format("(v,w,weight)(%d,%d,%d)", either(), other(either()), weight());
     }
 }

@@ -5,16 +5,11 @@ import java.util.NoSuchElementException;
 
 public class Queue<T> implements Iterable<T> {
 
-	private Node first;
-	private Node last;
+	private SingleLinkedNode<T> first;
+	private SingleLinkedNode<T> last;
 	
 	private int size;
-	
-	private class Node {
-		private T value;
-		private Node next;
-	}
-	
+
 	public Queue() {
 		first = null;
 		last = null;
@@ -33,14 +28,13 @@ public class Queue<T> implements Iterable<T> {
 	}
 	
 	public void enqueue(T item) {
-		Node n = new Node();
-		n.value = item;
+		SingleLinkedNode n = new SingleLinkedNode(item);
 		if(isEmpty()){
 			first = n;
 			last = n;
 		}
 		else {
-			last.next = n;
+			last.setNext(n);
 			last = n;
 		}
 		size++;
@@ -48,18 +42,26 @@ public class Queue<T> implements Iterable<T> {
 	
 	public T dequeue() {
 		if(isEmpty()) { throw new RuntimeException("Queue empty"); }
-		T item = first.value;
-		first = first.next;
+		T item = first.getValue();
+		first = first.getNext();
 		size--;
 		if(isEmpty()) { last = null; }
 		return item;
 	}
-	
+
+	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		for(T item : this) {
-			sb.append(item + " ");
+
+		Node current = first;
+		while (current != null) {
+			if(current != first) { sb.append(", "); }
+			sb.append(current.getValue());
 		}
+
+		sb.insert(0, "[");
+		sb.insert(sb.length(), "]");
+
 		return sb.toString();
 	}
 
@@ -69,7 +71,7 @@ public class Queue<T> implements Iterable<T> {
 	
 	private class ListIterator implements Iterator<T> {
 
-		private Node current = first;
+		private SingleLinkedNode<T> current = first;
 		
 		public boolean hasNext() {
 			return current != null;
@@ -77,8 +79,8 @@ public class Queue<T> implements Iterable<T> {
 
 		public T next() {
 			if(!hasNext()) { throw new NoSuchElementException(); }
-			T item = current.value;
-			current = current.next;
+			T item = current.getValue();
+			current = current.getNext();
 			return item;
 		}
 		
