@@ -6,55 +6,6 @@ import java.util.List;
 
 public final class ArraysAlgorithms {
 
-    public static final class Rotate_V1 {
-
-        public static void rotate(Integer[] input, int k) {
-
-            if(k > input.length) {
-                k = k % input.length;
-            }
-
-            Integer[] result = new Integer[input.length];
-            for(int i = 0; i < input.length - k; i++) {
-                result[i] = input[i + k];
-            }
-
-            for(int i = 0; i < k; i++) {
-                result[input.length-k+i] = input[i];
-            }
-
-            System.arraycopy(result, 0, input, 0, input.length);
-        }
-
-    }
-
-    public static final class LargestKthElement {
-
-        public static int kthElement(Integer[] input, int k) {
-            Arrays.sort(input);
-            return input[input.length - k];
-        }
-
-    }
-
-    public static final class ReorderByIndexArray {
-
-        public static void reorder(Integer[] arr, Integer[] index) {
-
-            for(int i = 0; i < arr.length; i++) {
-                swap(arr, index[i], i);
-                swap(index, index[i], i);
-            }
-
-        }
-
-        private static void swap(Integer[] arr, int a, int b) {
-            int temp = arr[a];
-            arr[a] = arr[b];
-            arr[b] = temp;
-        }
-
-    }
 
     public static final class CountFrequencies {
         /*

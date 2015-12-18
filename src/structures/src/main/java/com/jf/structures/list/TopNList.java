@@ -1,5 +1,7 @@
 package com.jf.structures.list;
 
+import com.jf.utils.CheckUtils;
+
 import java.util.Iterator;
 import java.util.TreeSet;
 
@@ -14,7 +16,9 @@ public class TopNList<E extends Comparable<?>> {
 	}
 	
 	public void add(E item) {
-		
+
+		CheckUtils.isNull(item, "item");
+
 		set.add(item);
 		
 		if(set.size() > size) {

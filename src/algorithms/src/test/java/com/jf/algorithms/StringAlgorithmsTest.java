@@ -4,7 +4,7 @@ import junit.framework.TestCase;
 
 public class StringAlgorithmsTest extends TestCase {
 
-
+    /*
     public void testReverseString() {
 
         String input = "jorge figueiredo";
@@ -38,6 +38,7 @@ public class StringAlgorithmsTest extends TestCase {
         assertEquals(result, StringAlgorithms.RemoveCharacter.remove(input.toCharArray(), ' '));
 
     }
+    */
 
     public void testCountValidParenthesis() {
 

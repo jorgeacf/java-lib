@@ -1,5 +1,7 @@
 package com.jf.structures.list;
 
+import com.jf.utils.CheckUtils;
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -22,7 +24,9 @@ public class Stack<T> implements Iterable<T> {
 	}
 	
 	public void push(T item) {
-		
+
+		CheckUtils.isNull(item, "value");
+
 		SingleLinkedNode<T> oldfirst = first;
 		first = new SingleLinkedNode(item);
 		first.setValue(item);
@@ -31,7 +35,7 @@ public class Stack<T> implements Iterable<T> {
 	}
 	
 	public T pop() {
-		if(isEmpty()) { throw new RuntimeException("Stack empty"); }
+		if(isEmpty()) { throw new IndexOutOfBoundsException("Stack empty"); }
 		T item = first.getValue();
 		first = first.getNext();
 		size--;
@@ -39,7 +43,7 @@ public class Stack<T> implements Iterable<T> {
 	}
 	
 	public T peek() {
-		if(isEmpty()) { throw new RuntimeException("Stack empty"); }
+		if(isEmpty()) { throw new IndexOutOfBoundsException("Stack empty"); }
 		return first.getValue();
 	}
 

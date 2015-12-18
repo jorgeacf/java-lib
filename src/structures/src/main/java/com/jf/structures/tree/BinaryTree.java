@@ -20,19 +20,6 @@ public class BinaryTree<K extends Comparable<K>, V> {
         add(new BinaryNode<K, V>(key, value));
     }
 
-    private void add(BinaryNode<K, V> newNode) {
-
-        if(root == null) {
-            root = newNode;
-            newNode.setLevel(1);
-        }
-        else {
-            add(root, 1, newNode);
-        }
-
-        size++;
-    }
-
     public void delete(K key) {
         delete(root, key);
     }
@@ -69,6 +56,28 @@ public class BinaryTree<K extends Comparable<K>, V> {
         return queue;
     }
 
+    public int numberOfChildren() {
+        return numberOfChildren(root);
+    }
+
+    public boolean isBST() {
+        return isBST(root, min(), max());
+    }
+
+
+    private void add(BinaryNode<K, V> newNode) {
+
+        if(root == null) {
+            root = newNode;
+            newNode.setLevel(1);
+        }
+        else {
+            add(root, 1, newNode);
+        }
+
+        size++;
+    }
+
     private void children(BinaryNode<K, V> node, Queue<BinaryNode<K, V>> queue, K key) {
 
         if(node == null) { return; }
@@ -76,14 +85,6 @@ public class BinaryTree<K extends Comparable<K>, V> {
         if(node.getLeft() != null) { queue.enqueue(node.getLeft()); children(node.getLeft(), queue, key); }
         if(node.getRight() != null) { queue.enqueue(node.getRight()); children(node.getRight(), queue, key); }
 
-    }
-
-    public int numberOfChildren() {
-        return numberOfChildren(root);
-    }
-
-    public boolean isBST() {
-        return isBST(root, min(), max());
     }
 
     private boolean isBST(BinaryNode<K, V> current, K minKey, K maxKey) {
@@ -147,8 +148,7 @@ public class BinaryTree<K extends Comparable<K>, V> {
         int left = current.getLeft() == null ? current.getLevel() : height(current.getLeft());
         int right = current.getRight() == null ? current.getLevel() : height(current.getRight());
 
-        int max = Math.max(left, right);
-        return max;
+        return Math.max(left, right);
     }
 
     private BinaryNode<K,V> get(BinaryNode<K, V> current, K key) {

@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-public final class PairsSum {
+public final class SumPairs {
 
     private final static int MAX = 100000;
 

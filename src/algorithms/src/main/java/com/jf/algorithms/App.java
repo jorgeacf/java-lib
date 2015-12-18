@@ -4,6 +4,35 @@ public class App {
 
     public static void main(String[] args) {
 
+
+        String input = "jorge";
+
+        String output = reverse(input);
+
+        String expectedResult = "egroj";
+
+        System.out.println(output.equals(expectedResult));
+
+        //runListExample();
+
+    }
+
+    private static String reverse(String input) {
+
+        System.out.println(input);
+        if(input.equals("")) {
+            return input;
+        }
+        else {
+            String firstHalf = input.substring(0, 1);
+            String secondHalf = input.substring(1, input.length());
+            return reverse(secondHalf) + firstHalf;
+        }
+
+    }
+
+
+    private static void runListExample() {
         Node first = new Node(1);
 
         Node second = new Node(2);
@@ -19,7 +48,6 @@ public class App {
         fourth.next = fifth;
 
         System.out.println(find(first, 1));
-
     }
 
     private static int find(Node node, int value) {

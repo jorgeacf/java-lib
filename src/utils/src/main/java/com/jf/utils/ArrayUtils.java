@@ -48,4 +48,33 @@ public final class ArrayUtils {
         return sb.toString();
     }
 
+    public static <T extends Comparable<T>> T max(T[] input) {
+
+        CheckUtils.isNull(input, "input");
+        if(input.length == 0) { return null; }
+
+        T max = input[0];
+
+        int len = input.length;
+        for(int i = 1; i < len; i++) {
+            if(input[i].compareTo(max) > 0) { max = input[i]; }
+        }
+
+        return max;
+    }
+
+    public static <T extends Comparable<T>> T min(T[] input) {
+
+        CheckUtils.isNull(input, "input");
+        if(input.length == 0) { return null; }
+
+        T min = input[0];
+
+        int len = input.length;
+        for(int i = 1; i < len; i++) {
+            if(input[i].compareTo(min) < 0) { min = input[i]; }
+        }
+
+        return min;
+    }
 }

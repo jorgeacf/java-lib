@@ -15,9 +15,10 @@ public class SortingTest extends TestCase {
 
         //ShellSort.sort(input);
         //QuickSort.sort(input);
-        MergeSort.sort(input);
-        Arrays.sort(output);
+        //MergeSort.sort(input);
+        BubbleSort.sort(input);
 
+        Arrays.sort(output);
         assertTrue(Arrays.equals(input, output));
     }
 }

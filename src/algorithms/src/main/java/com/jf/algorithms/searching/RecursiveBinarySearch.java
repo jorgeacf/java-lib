@@ -5,8 +5,8 @@ public final class RecursiveBinarySearch {
 
     public static int search(Comparable[] inputArray, Comparable value) {
 
-        if(inputArray == null) { throw new IllegalArgumentException("The parameter inputArray can't be null."); }
-        if(value == null) { throw new IllegalArgumentException("The parameter value can't be null."); }
+        if(inputArray == null)  { throw new IllegalArgumentException("The parameter inputArray can't be null."); }
+        if(value == null)       { throw new IllegalArgumentException("The parameter value can't be null."); }
 
         return search(inputArray, value, 0, inputArray.length);
     }

@@ -2,13 +2,12 @@ package com.jf.algorithms;
 
 import junit.framework.TestCase;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 public class ArraysAlgorithmsTest extends TestCase {
 
-    public void testReverseV1() {
+/*    public void testReverseV1() {
 
         Integer[] input = new Integer[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
@@ -16,31 +15,8 @@ public class ArraysAlgorithmsTest extends TestCase {
 
         Integer[] result = new Integer[] { 4, 5, 6, 7, 8, 9, 1, 2, 3 };
         assertTrue(Arrays.equals(input, result));
-    }
+    }*/
 
-    public void testReorderWithIndexArray() {
-
-        Integer[] array = new Integer[] { 10, 11, 12 };
-        Integer[] index = new Integer[] { 1, 0, 2 };
-
-        ArraysAlgorithms.ReorderByIndexArray.reorder(array, index);
-
-        Integer[] result = new Integer[] { 11, 10, 12};
-        assertTrue(Arrays.equals(array, result));
-
-    }
-
-    public void testReorderWithIndexArray2() {
-
-        Integer[] array = new Integer[] { 50, 40, 70, 60, 90 };
-        Integer[] index = new Integer[] { 3,  0,  4,  1,  2 };
-
-        ArraysAlgorithms.ReorderByIndexArray.reorder(array, index);
-
-        Integer[] result = new Integer[] { 40, 60, 90, 50, 70};
-        assertTrue(Arrays.equals(array, result));
-
-    }
 
     public void testCountFrequencies() {
 

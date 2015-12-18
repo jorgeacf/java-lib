@@ -1,9 +1,8 @@
 package com.jf.structures.list;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import com.jf.utils.CheckUtils;
 
 import java.util.Iterator;
-import java.util.function.Consumer;
 
 public class SingleLinkedList<T> implements Iterable<T> {
 
@@ -19,6 +18,8 @@ public class SingleLinkedList<T> implements Iterable<T> {
 
     public void addFirst(T value) {
 
+        CheckUtils.isNull(value, "value");
+
         SingleLinkedNode node = new SingleLinkedNode(value);
 
         if(first != null) {
@@ -31,6 +32,8 @@ public class SingleLinkedList<T> implements Iterable<T> {
     }
 
     public void addLast(T value) {
+
+        CheckUtils.isNull(value, "value");
 
         SingleLinkedNode cursor = first;
 
@@ -46,6 +49,9 @@ public class SingleLinkedList<T> implements Iterable<T> {
     }
 
     public void insertAtIndex(T value, int index) {
+
+        CheckUtils.isNull(value, "value");
+        if(index < 0 || index > size) { throw new IndexOutOfBoundsException("The index needs to be between 0 and the size of the list"); }
 
         SingleLinkedNode cursor = first;
         SingleLinkedNode prev = null;
@@ -66,6 +72,8 @@ public class SingleLinkedList<T> implements Iterable<T> {
 
     public T removeFirst() {
 
+        if(isEmpty()) { throw new IndexOutOfBoundsException("Can't remove an item from a empty list."); }
+
         SingleLinkedNode<T> node = first;
 
         first = first.getNext();
@@ -76,6 +84,8 @@ public class SingleLinkedList<T> implements Iterable<T> {
     }
 
     public T removeLast() {
+
+        if(isEmpty()) { throw new IndexOutOfBoundsException("Can't remove an item from a empty list."); }
 
         SingleLinkedNode<T> cursor = first;
         SingleLinkedNode<T> prev = null;
@@ -93,6 +103,8 @@ public class SingleLinkedList<T> implements Iterable<T> {
     }
 
     public T removeAtIndex(int index) {
+
+        if(index > size) { throw new IllegalArgumentException("The index should be smaller than the size of the list."); }
 
         SingleLinkedNode<T> cursor = first;
         SingleLinkedNode<T> prev = null;
@@ -115,11 +127,11 @@ public class SingleLinkedList<T> implements Iterable<T> {
         return new SingleLinkedListIterator<T>(first);
     }
 
-    private static class SingleLinkedListIterator<TT> implements Iterator<TT> {
+    private class SingleLinkedListIterator<T> implements Iterator<T> {
 
-        private SingleLinkedNode<TT> cursor;
+        private SingleLinkedNode<T> cursor;
 
-        public SingleLinkedListIterator(SingleLinkedNode<TT> first) {
+        public SingleLinkedListIterator(SingleLinkedNode<T> first) {
             cursor = first;
         }
 
@@ -128,9 +140,9 @@ public class SingleLinkedList<T> implements Iterable<T> {
             return cursor.hasNext();
         }
 
-        public TT next() {
+        public T next() {
 
-            TT value = null;
+            T value = null;
 
             if(cursor != null) { value = cursor.getValue(); }
             if(cursor != null && cursor.hasNext()) { cursor = cursor.getNext(); }
@@ -138,13 +150,6 @@ public class SingleLinkedList<T> implements Iterable<T> {
             return value;
         }
 
-        public void remove() {
-            throw new NotImplementedException();
-        }
-
-        public void forEachRemaining(Consumer<? super TT> action) {
-            throw new NotImplementedException();
-        }
     }
 
 }
