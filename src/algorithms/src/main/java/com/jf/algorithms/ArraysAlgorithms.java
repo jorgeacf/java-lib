@@ -50,28 +50,6 @@ public final class ArraysAlgorithms {
 
     }
 
-    public static final class FindPeakElement {
-
-        public static Integer get(Integer[] input) {
-
-            if(input.length <= 3) { return null; }
-
-            if(input[1] <= input[0]) { return input[0]; }
-            if(input[input.length-2] <= input[input.length-1]) { return input[input.length-1]; }
-
-            for(int i = 1; i < input.length - 1; i++) {
-
-                if(input[i-1] <= input[i] && input[i+1] <= input[i]) {
-                    return input[i];
-                }
-
-            }
-
-            return null;
-        }
-
-    }
-
     public static final class FindMedian {
 
         public static int find(int[] input) {

@@ -19,4 +19,9 @@ public class SingleLinkedNode<T> extends Node<T> {
 
     public boolean hasNext() { return next != null; }
 
+    @Override
+    public String toString() {
+        return String.format("Value=[%s], Next=[%s]", getValue(), getNext());
+    }
+
 }

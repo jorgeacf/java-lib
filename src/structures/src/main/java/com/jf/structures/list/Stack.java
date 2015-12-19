@@ -5,7 +5,7 @@ import com.jf.utils.CheckUtils;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class Stack<T> implements Iterable<T> {
+public class Stack<T extends Comparable<T>> implements Iterable<T> {
 
 	private SingleLinkedNode<T> first;
 	private int size = 0;

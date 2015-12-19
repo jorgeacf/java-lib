@@ -12,7 +12,7 @@ public class SingleLinkedListUtilsTest extends TestCase {
 
         Integer[] input = new Integer[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
-        SingleLinkedList<Integer> result = SingleLinkedListUtils.makeFromArray(input);
+        SingleLinkedList<Integer> result = SingleLinkedListUtils.makeListFromArray(input);
 
         Iterator<Integer> iterator = result.iterator();
         for(int i = 0; i < result.size(); i++) {
