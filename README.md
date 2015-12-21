@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/jorgeacf/java-lib.svg)](https://travis-ci.org/jorgeacf/java-lib)
 [![Coverage Status](https://coveralls.io/repos/jorgeacf/java-lib/badge.svg?branch=master&service=github)](https://coveralls.io/github/jorgeacf/java-lib?branch=master)
 
-This library contains the fundamental data structures and algorithms in Java.
+This library contains fundamental data structures and algorithms in Java.
 
 
 ### Data Structures
