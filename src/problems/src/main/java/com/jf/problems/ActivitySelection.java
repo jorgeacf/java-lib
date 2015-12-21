@@ -1,4 +1,4 @@
-package com.jf.algorithms.problems;
+package com.jf.problems;
 
 import com.jf.utils.CheckUtils;
 

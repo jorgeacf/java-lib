@@ -1,6 +1,6 @@
-package com.jf.algorithms.problems;
+package com.jf.problems;
 
-import com.jf.algorithms.problems.ActivitySelection.Activity;
+import com.jf.problems.ActivitySelection.Activity;
 import junit.framework.TestCase;
 
 import java.util.List;
