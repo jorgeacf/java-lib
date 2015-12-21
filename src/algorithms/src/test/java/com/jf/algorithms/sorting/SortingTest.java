@@ -14,7 +14,7 @@ public class SortingTest extends TestCase {
         Integer[] output = Arrays.copyOf(input, input.length);
 
         //ShellSort.sort(input);
-        //QuickSort.sort(input);
+        //QuickSortSingleLinkedList.sort(input);
         //MergeSort.sort(input);
         BubbleSort.sort(input);
 

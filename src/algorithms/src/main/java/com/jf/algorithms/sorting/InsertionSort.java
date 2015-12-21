@@ -8,7 +8,7 @@ public final class InsertionSort {
 
     /**
      * This method sort the inputArray using the Insertion sort algorithm.
-     * The running time cost is O(n^3) and the stace cost is O(1).
+     * The running time cost is O(n^3) and the space cost is O(1).
      * @param inputArray
      */
     public static void sort(Comparable[] inputArray) {

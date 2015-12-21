@@ -7,7 +7,7 @@ public final class QuickSort {
     private QuickSort() {}
 
     /**
-     * This method sorts the inputArray using the QuickSort algorithm.
+     * This method sorts the inputArray using the QuickSortSingleLinkedList algorithm.
      * @param inputArray
      */
     public static void sort(Comparable[] inputArray) {

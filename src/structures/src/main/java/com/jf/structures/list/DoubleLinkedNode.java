@@ -1,8 +1,9 @@
 package com.jf.structures.list;
 
-public class DoubleLinkedNode<T> extends SingleLinkedNode<T> {
+public class DoubleLinkedNode<T> extends Node<T>  {
 
-    private Node previous;
+    private DoubleLinkedNode previous;
+    private DoubleLinkedNode next;
 
     public DoubleLinkedNode(T value) {
         super(value);
@@ -10,17 +11,32 @@ public class DoubleLinkedNode<T> extends SingleLinkedNode<T> {
         setPrevious(null);
     }
 
-    public Node getPrevious() {
+    public DoubleLinkedNode getPrevious() {
         return previous;
     }
+    public DoubleLinkedNode getNext() { return next; }
 
-    public void setPrevious(Node previous) {
+    public void setPrevious(DoubleLinkedNode previous) {
         this.previous = previous;
     }
+    public void setNext(DoubleLinkedNode next) { this.next = next; }
 
     @Override
     public String toString() {
-        return String.format("[%s]", getValue());
+
+        DoubleLinkedNode curr = this;
+
+        StringBuilder sb = new StringBuilder();
+        while(curr != null) {
+            if(sb.length() != 0) { sb.append(", "); }
+            sb.append(curr.getValue());
+            curr = curr.getNext();
+        }
+
+        sb.insert(0, "[");
+        sb.insert(sb.length(), "]");
+
+        return sb.toString();
     }
 
 }

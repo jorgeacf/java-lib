@@ -1,5 +1,6 @@
 package com.jf.structures;
 
+import com.jf.structures.string.SuffixArray;
 import junit.framework.TestCase;
 
 import java.util.Arrays;

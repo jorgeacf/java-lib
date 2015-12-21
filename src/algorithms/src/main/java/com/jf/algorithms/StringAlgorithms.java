@@ -69,24 +69,4 @@ public final class StringAlgorithms {
 
     }
 
-    public static final class Polimorphic {
-
-        public static boolean isPolimorphic(String a, String b) {
-
-            if(a.length() != b.length()) { return false; }
-
-            char[] map = new char['z'-'a'];
-
-            for(int i = 0; i < a.length(); i++) {
-
-                int index = a.charAt(i) - 'a';
-
-                if(map[index] == 0) { map[index] = b.charAt(i); }
-                else if(map[index] != b.charAt(i)) { return false; }
-            }
-            return true;
-        }
-
-    }
-
 }

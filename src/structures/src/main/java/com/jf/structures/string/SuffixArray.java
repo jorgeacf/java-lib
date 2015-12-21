@@ -1,4 +1,4 @@
-package com.jf.structures;
+package com.jf.structures.string;
 
 import java.util.Arrays;
 
