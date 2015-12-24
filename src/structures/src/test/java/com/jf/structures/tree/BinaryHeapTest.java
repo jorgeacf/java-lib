@@ -14,15 +14,9 @@ public class BinaryHeapTest extends TestCase {
         heap.insert(9);
         heap.insert(1);
 
-        System.out.println(heap);
         assertEquals(1, heap.deleteMin());
-        System.out.println(heap);
         assertEquals(2, heap.deleteMin());
-        System.out.println(heap);
         assertEquals(3, heap.deleteMin());
-        System.out.println(heap);
-        heap.insert(1);
-        System.out.println(heap);
 
     }
 

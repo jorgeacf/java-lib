@@ -3,6 +3,8 @@ package com.jf.structures.tree;
 import com.jf.structures.list.Queue;
 
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 public class BinaryTree<K extends Comparable<K>, V> {
@@ -196,6 +198,19 @@ public class BinaryTree<K extends Comparable<K>, V> {
         throw new RuntimeException();
     }
 
+
+    //
+    //  Transverse by level
+    //
+    public List<K> keysByLevel() {
+        List<K> keys = new LinkedList<K>();
+        Iterator<BinaryNode<K,V>> iterator = this.iteratorByLevel();
+        while(iterator.hasNext()) {
+            keys.add(iterator.next().getKey());
+        }
+        return keys;
+    }
+
     public Iterator<BinaryNode<K, V>> iteratorByLevel() {
         return new IteratorByLevel(root);
     }
@@ -226,60 +241,165 @@ public class BinaryTree<K extends Comparable<K>, V> {
 
     }
 
+    //
+    // Transverse in order
+    //
+    public List<K> keysInOrder() {
+        List<K> keys = new LinkedList<K>();
 
-    public void printLevelByLine() {
+        Iterator<BinaryNode<K, V>> iterator = iteratorInOrder();
 
-        Queue<BinaryNode> queue = new Queue<BinaryNode>();
-        queue.enqueue(root);
+        while(iterator.hasNext()) {
+            keys.add(iterator.next().getKey());
+        }
 
-        int currentLevel = 1;
-        while(!queue.isEmpty()) {
+        return keys;
+    }
 
-            BinaryNode<K, V> node = queue.dequeue();
+    public Iterator<BinaryNode<K, V>> iteratorInOrder() {
+        return new IteratorInOrder(root);
+    }
 
-            if(node.getLeft() != null) { queue.enqueue(node.getLeft()); }
-            if(node.getRight() != null) { queue.enqueue(node.getRight()); }
+    private class IteratorInOrder implements Iterator<BinaryNode<K, V>> {
 
-            if(currentLevel == node.getLevel()) {
-                System.out.print(node.getValue() + " ");
-            }
-            else if(currentLevel < node.getLevel()) {
-                currentLevel += 1;
-                System.out.println();
-                System.out.print(node.getValue() + " ");
-            }
+        private final List<BinaryNode<K, V>> keys;
+        private final Iterator<BinaryNode<K, V>> iterator;
+
+        public IteratorInOrder(BinaryNode<K, V> root) {
+            keys = getKeys(root);
+            iterator = keys.iterator();
+        }
+
+        private List<BinaryNode<K, V>> getKeys(BinaryNode<K, V> root) {
+            List<BinaryNode<K, V>> nodes = new LinkedList<BinaryNode<K, V>>();
+            getKeys(root, nodes);
+            return nodes;
+        }
+
+        private void getKeys(BinaryNode<K, V> node, List<BinaryNode<K, V>> list) {
+
+            if(node == null) { return; }
+
+            getKeys(node.getLeft(), list);
+            list.add(node);
+            getKeys(node.getRight(), list);
 
         }
-        System.out.println();
+
+        public boolean hasNext() {
+            return iterator.hasNext();
+        }
+
+        public BinaryNode<K, V> next() {
+            return iterator.next();
+        }
     }
 
-    public void printPos() {
-        printPos(root);
-        System.out.println();
+    //
+    // Transverse pre order
+    //
+    public List<K> keysInPreOrder() {
+        List<K> keys = new LinkedList<K>();
+
+        Iterator<BinaryNode<K, V>> iterator = iteratorInPreOrder();
+
+        while(iterator.hasNext()) {
+            keys.add(iterator.next().getKey());
+        }
+
+        return keys;
     }
 
-    public void printPos(BinaryNode<K, V> node) {
-
-        if(node == null) { return; }
-
-        printPos(node.getLeft());
-        System.out.print(node.getValue());
-        printPos(node.getRight());
-
+    public Iterator<BinaryNode<K, V>> iteratorInPreOrder() {
+        return new IteratorInPreOrder(root);
     }
 
-    public void printPre() {
-        printPre(root);
-        System.out.println();
+    private class IteratorInPreOrder implements Iterator<BinaryNode<K, V>> {
+
+        private final List<BinaryNode<K, V>> keys;
+        private final Iterator<BinaryNode<K, V>> iterator;
+
+        public IteratorInPreOrder(BinaryNode<K, V> root) {
+            keys = getKeys(root);
+            iterator = keys.iterator();
+        }
+
+        private List<BinaryNode<K, V>> getKeys(BinaryNode<K, V> root) {
+            List<BinaryNode<K, V>> nodes = new LinkedList<BinaryNode<K, V>>();
+            getKeys(root, nodes);
+            return nodes;
+        }
+
+        private void getKeys(BinaryNode<K, V> node, List<BinaryNode<K, V>> list) {
+
+            if(node == null) { return; }
+
+            list.add(node);
+            getKeys(node.getLeft(), list);
+            getKeys(node.getRight(), list);
+
+        }
+
+        public boolean hasNext() {
+            return iterator.hasNext();
+        }
+
+        public BinaryNode<K, V> next() {
+            return iterator.next();
+        }
     }
 
-    private void printPre(BinaryNode<K, V> node) {
+    //
+    // Transverse pos order
+    //
+    public List<K> keysInPosOrder() {
+        List<K> keys = new LinkedList<K>();
 
-        if(node == null) { return; }
+        Iterator<BinaryNode<K, V>> iterator = iteratorInPreOrder();
 
-        System.out.print(node.getValue());
-        printPos(node.getLeft());
-        printPos(node.getRight());
-
+        while(iterator.hasNext()) {
+            keys.add(iterator.next().getKey());
+        }
+        return keys;
     }
+
+    public Iterator<BinaryNode<K, V>> iteratorInPostOrder() { return new IteratorInPostOrder(root); }
+
+    private class IteratorInPostOrder implements Iterator<BinaryNode<K, V>> {
+
+        private final List<BinaryNode<K, V>> keys;
+        private final Iterator<BinaryNode<K, V>> iterator;
+
+        public IteratorInPostOrder(BinaryNode<K, V> root) {
+            keys = getKeys(root);
+            iterator = keys.iterator();
+        }
+
+        private List<BinaryNode<K, V>> getKeys(BinaryNode<K, V> root) {
+            List<BinaryNode<K, V>> nodes = new LinkedList<BinaryNode<K, V>>();
+            getKeys(root, nodes);
+            return nodes;
+        }
+
+        private void getKeys(BinaryNode<K, V> node, List<BinaryNode<K, V>> list) {
+
+            if (node == null) {
+                return;
+            }
+
+            getKeys(node.getLeft(), list);
+            getKeys(node.getRight(), list);
+            list.add(node);
+
+        }
+
+        public boolean hasNext() {
+            return iterator.hasNext();
+        }
+
+        public BinaryNode<K, V> next() {
+            return iterator.next();
+        }
+    }
+
 }
