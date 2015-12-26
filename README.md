@@ -8,11 +8,6 @@ This library contains fundamental data structures and algorithms in Java.
 
 ### Data Structures
 
-#### Pair
-The pair class allows to store two values of type T1 and T2.
-
-#### Triplet
-The triplet class allows to store three values of type T1, T2 and T3.
 
 ### Algorithms
 
