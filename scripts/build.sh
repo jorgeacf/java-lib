@@ -1,15 +1,12 @@
 
 cd ./src/utils;
-mvn package;
+mvn test package;
 
 cd ../../src/structures;
-mvn package;
+mvn test package;
 
 cd ../../src/algorithms;
-mvn package
+mvn test package
 
 cd ../../src/problems;
-mvn package;
-
-cd ../../;
-mvn cobertura:cobertura coveralls:report
+mvn test package;
