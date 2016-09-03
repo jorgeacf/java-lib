@@ -51,7 +51,6 @@ public class Stack<T extends Comparable<T>> implements Iterable<T> {
 	public String toString() {
 
 		StringBuilder sb = new StringBuilder();
-
 		Node current = first;
 		while (current != null) {
 			if(current != first) { sb.append(", "); }
@@ -60,7 +59,6 @@ public class Stack<T extends Comparable<T>> implements Iterable<T> {
 
 		sb.insert(0, "[");
 		sb.insert(sb.length(), "]");
-
 		return sb.toString();
 	}
 

@@ -52,16 +52,13 @@ public class Queue<T> implements Iterable<T> {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-
 		Node current = first;
 		while (current != null) {
 			if(current != first) { sb.append(", "); }
 			sb.append(current.getValue());
 		}
-
 		sb.insert(0, "[");
 		sb.insert(sb.length(), "]");
-
 		return sb.toString();
 	}
 
@@ -88,5 +85,4 @@ public class Queue<T> implements Iterable<T> {
 			throw new UnsupportedOperationException();
 		}
 	}
-	
 }

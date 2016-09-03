@@ -19,7 +19,10 @@ public class SuffixArray {
 
     public int lcp(int i) {
 
-        if(i < 1 || i > suffixes.length) { throw new IllegalArgumentException(String.format("The parameter i should be between %d and %d.", 1, suffixes.length)); }
+        if(i < 1 || i > suffixes.length) {
+            throw new IllegalArgumentException(
+                    String.format("The parameter i should be between %d and %d.", 1, suffixes.length));
+        }
 
         return lcp(suffixes[i], suffixes[i-1]);
     }
@@ -56,7 +59,8 @@ public class SuffixArray {
         return suffixes.length;
     }
 
-    public String print() {
+    @Override
+    public String toString() {
 
         StringBuffer sb = new StringBuffer();
 
@@ -66,7 +70,6 @@ public class SuffixArray {
 
         return sb.toString();
     }
-
 
     public static class Suffix implements Comparable<Suffix> {
 
@@ -105,7 +108,5 @@ public class SuffixArray {
             return text.substring(index); //String.format("%d-%s", index, text);
         }
     }
-
-
 
 }
