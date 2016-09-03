@@ -43,6 +43,12 @@
       <scope>system</scope>
       <systemPath>${basedir}/../utils/target/utils-1.0-SNAPSHOT.jar</systemPath>
     </dependency>
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>RELEASE</version>
+          <scope>test</scope>
+      </dependency>
 
   </dependencies>
 </project>
