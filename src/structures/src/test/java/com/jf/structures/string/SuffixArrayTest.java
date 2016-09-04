@@ -12,7 +12,7 @@ public class SuffixArrayTest extends TestCase {
 
         SuffixArray suffixArray = new SuffixArray(input);
 
-        String[] output = suffixArray.print().split("\n");
+        String[] output = suffixArray.toString().split("\n");
 
         assertEquals("a", output[0]);
         assertEquals("ana", output[1]);
@@ -52,7 +52,7 @@ public class SuffixArrayTest extends TestCase {
 
         SuffixArray suffixArray = new SuffixArray(input);
 
-        String[] output = suffixArray.print().split("\n");
+        String[] output = suffixArray.toString().split("\n");
 
         assertEquals("$", output[0]);
         assertEquals("a$", output[1]);
@@ -70,7 +70,7 @@ public class SuffixArrayTest extends TestCase {
 
         SuffixArray suffixArray = new SuffixArray(input);
 
-        String[] output = suffixArray.print().split("\n");
+        String[] output = suffixArray.toString().split("\n");
 
         assertEquals(0, suffixArray.lcp(1));
         assertEquals(1, suffixArray.lcp(2));

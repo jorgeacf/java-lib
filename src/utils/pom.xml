@@ -57,6 +57,11 @@
           <artifactId>powermock-module-junit4</artifactId>
           <version>1.6.5</version>
       </dependency>
+      <dependency>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-api</artifactId>
+          <version>RELEASE</version>
+      </dependency>
 
   </dependencies>
 </project>

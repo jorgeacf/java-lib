@@ -39,28 +39,22 @@ public class QuickFind implements UnionFind {
     public void union(int p, int q) {
         int pi = id[p];
         int qi = id[q];
-
         if(pi == qi) { return; }
-
         for(int i = 0; i < id.length; i++) {
             if(id[i] == pi) { id[i] = qi; }
         }
-
         count--;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-
         for(int i = 0; i < id.length; i++) {
             if(sb.length() != 0) { sb.append(", "); }
             sb.append(id[i]);
         }
-
         sb.insert(0, "[");
         sb.insert(sb.length(), "]");
-
         return sb.toString();
     }
 }

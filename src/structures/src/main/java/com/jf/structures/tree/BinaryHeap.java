@@ -116,16 +116,12 @@ public final class BinaryHeap<T extends Comparable<T>> {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-
         for(int i = 0; i < size; i++) {
-
             if(sb.length() != 0) { sb.append(", "); }
             sb.append(heap[i]);
         }
-
         sb.insert(0, "[");
         sb.insert(sb.length(), "]");
-
         return sb.toString();
     }
 

@@ -5,12 +5,12 @@ import java.util.NoSuchElementException;
 
 public class Bag<T> implements Iterable<T> {
 
-	private int N;
 	private SingleLinkedNode<T> first;
-	
+	private int size;
+
 	public Bag() {
 		first = null;
-		N = 0;
+		size = 0;
 	}
 	
 	public boolean isEmpty() {
@@ -18,34 +18,30 @@ public class Bag<T> implements Iterable<T> {
 	}
 	
 	public int size() {
-		return N;
+		return size;
 	}
 	
 	public void add(T t) {
 		SingleLinkedNode<T> oldFirst = first;
 		first = new SingleLinkedNode<T>(t);
 		first.setNext(oldFirst);
-		N++;
+		size++;
 	}
 	
 	public Iterator<T> iterator() {
-		
 		return new ListIterator<T>(first);
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-
 		Node current = first;
 		while (current != null) {
 			if(current != first) { sb.append(", "); }
 			sb.append(current.getValue());
 		}
-
 		sb.insert(0, "[");
 		sb.insert(sb.length(), "]");
-
 		return sb.toString();
 	}
 
@@ -71,5 +67,4 @@ public class Bag<T> implements Iterable<T> {
 			throw new UnsupportedOperationException();
 		}
 	}
-	
 }

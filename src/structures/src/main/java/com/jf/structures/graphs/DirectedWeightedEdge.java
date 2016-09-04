@@ -14,10 +14,8 @@ public class DirectedWeightedEdge extends DirectedEdge {
 	}
 
 	public int compareTo(DirectedWeightedEdge that) {
-
 		if(this.weight < that.weight) { return -1; }
 		if(this.weight > that.weight) { return 1; }
-
 		return super.compareTo(that);
 	}
 

@@ -18,13 +18,10 @@ public class TopNList<E extends Comparable<?>> {
 	public void add(E item) {
 
 		CheckUtils.isNull(item, "item");
-
 		set.add(item);
-		
 		if(set.size() > size) {
 			set.remove(set.first());
 		}
-		
 	}
 	
 	public Iterator<E> iterator() {

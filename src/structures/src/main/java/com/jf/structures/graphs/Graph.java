@@ -5,11 +5,11 @@ import com.jf.structures.list.Bag;
 import java.util.LinkedList;
 import java.util.List;
 
-public abstract class Graph<EE> {
+public abstract class Graph<EDGE> {
 
 	protected final int V;
 	protected int E;
-	protected Bag<EE>[] adj;
+	protected Bag<EDGE>[] adj;
 	protected int[] indegree;
 	
 	@SuppressWarnings("unchecked")
@@ -18,9 +18,9 @@ public abstract class Graph<EE> {
 		this.V = V;
 		this.E = 0;
 		indegree = new int[V];
-		adj = (Bag<EE>[])new Bag[V];
+		adj = (Bag<EDGE>[])new Bag[V];
 		for(int v = 0; v < V; v++) {
-			adj[v] = new Bag<EE>();
+			adj[v] = new Bag<EDGE>();
 		}
 	}
 	
@@ -36,28 +36,26 @@ public abstract class Graph<EE> {
 		if(v < 0 || v >= V) throw new IndexOutOfBoundsException("vertex " + v + " is not between 0 and " + (V-1));
 	}
 
-	protected abstract void validateVertex(EE e);
-    protected abstract void addEdgeX(EE e);
+	protected abstract void validateVertex(EDGE e);
+    protected abstract void addEdgeX(EDGE e);
 
-	public void addEdge(EE e) {
+	public void addEdge(EDGE e) {
         validateVertex(e);
         addEdgeX(e);
 		E++;
 	}
 
-
-	
-	public Iterable<EE> edges() {
-		List<EE> list = new LinkedList<EE>();
+	public Iterable<EDGE> edges() {
+		List<EDGE> list = new LinkedList<EDGE>();
 		for(int v = 0; v < V; v++) {
-			for(EE e : adj(v)) {
+			for(EDGE e : adj(v)) {
 				list.add(e);
 			}
 		}
 		return list;
 	}
 	
-	public Iterable<EE> adj(int v) {
+	public Iterable<EDGE> adj(int v) {
 		validateVertex(v);
 		return adj[v];
 	}
