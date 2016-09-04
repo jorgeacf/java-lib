@@ -1,22 +1,22 @@
 package com.jf.algorithms.list;
 
-import com.jf.structures.list.DoubleLinkedNode;
+import com.jf.structures.list.ValueDoubleLinkedNode;
 import com.jf.utils.CheckUtils;
 
 public final class DoubleLinkedListUtils {
 
     private DoubleLinkedListUtils() { }
 
-    public static <T extends Comparable<T>> DoubleLinkedNode<T> makeNodeFromArray(T[] input) {
+    public static <T extends Comparable<T>> ValueDoubleLinkedNode<T> makeNodeFromArray(T[] input) {
 
-        DoubleLinkedNode<T> dummy = new DoubleLinkedNode<T>(null);
+        ValueDoubleLinkedNode<T> dummy = new ValueDoubleLinkedNode<T>(null);
 
-        DoubleLinkedNode<T> last = dummy;
+        ValueDoubleLinkedNode<T> last = dummy;
 
         int len = input.length;
         for(int i = 0; i < len; i++) {
 
-            DoubleLinkedNode<T> node = new DoubleLinkedNode<T>(input[i]);
+            ValueDoubleLinkedNode<T> node = new ValueDoubleLinkedNode<T>(input[i]);
             last.setNext(node);
             node.setPrevious(last);
             last = last.getNext();
@@ -27,12 +27,12 @@ public final class DoubleLinkedListUtils {
         return dummy.getNext();
     }
 
-    public static <T extends Comparable<T>> T[] toArray(DoubleLinkedNode<T> node) {
+    public static <T extends Comparable<T>> T[] toArray(ValueDoubleLinkedNode<T> node) {
 
         CheckUtils.isNull(node, "node");
 
         int size = 0;
-        DoubleLinkedNode<T> current = node;
+        ValueDoubleLinkedNode<T> current = node;
         while(current != null) {
             current = current.getNext();
             size++;

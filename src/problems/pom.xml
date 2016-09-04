@@ -52,6 +52,12 @@
       <scope>system</scope>
       <systemPath>${basedir}/../algorithms/target/algorithms-0.0.1-SNAPSHOT.jar</systemPath>
     </dependency>
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>RELEASE</version>
+          <scope>test</scope>
+      </dependency>
 
   </dependencies>
 </project>

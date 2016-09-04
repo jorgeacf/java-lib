@@ -114,5 +114,10 @@ public class SingleLinkedList<T> implements Iterable<T> {
             if(cursor != null && cursor.hasNext()) { cursor = cursor.getNext(); }
             return value;
         }
+
+        @Override
+        public void remove() {
+
+        }
     }
 }
