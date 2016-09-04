@@ -2,7 +2,6 @@ package com.jf.algorithms.graphs;
 
 import com.jf.structures.graphs.DirectedEdge;
 import com.jf.structures.graphs.Graph;
-
 import java.util.Stack;
 
 public class DirectedCycle<E extends DirectedEdge> {
@@ -16,22 +15,17 @@ public class DirectedCycle<E extends DirectedEdge> {
 		marked = new boolean[G.V()];
 		onStack = new boolean[G.V()];
 		edgeTo = new int[G.V()];
-		
 		for(int v = 0; v < G.V(); v++) {
 			if(!marked[v] && cycle == null) {
 				dfs(G, v);
 			}
 		}
 	}
-	
-	
+
 	private void dfs(Graph<E> G, int v) {
-		
 		onStack[v] = true;
 		marked[v] = true;
-		
 		for(DirectedEdge e : G.adj(v)) {
-			
 			int w = e.to();
 			if(cycle != null) {
 				return;
@@ -48,9 +42,7 @@ public class DirectedCycle<E extends DirectedEdge> {
 				cycle.push(w);
 				cycle.push(v);
 			}
-			
 		}
-		
 		onStack[v] = false;
 	}
 	
@@ -61,4 +53,5 @@ public class DirectedCycle<E extends DirectedEdge> {
 	public Iterable<Integer> cycle() {
 		return cycle;
 	}
+
 }

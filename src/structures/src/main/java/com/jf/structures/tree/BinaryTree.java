@@ -66,9 +66,7 @@ public class BinaryTree<K extends Comparable<K>, V> {
         return isBST(root, min(), max());
     }
 
-
     private void add(BinaryNode<K, V> newNode) {
-
         if(root == null) {
             root = newNode;
             newNode.setLevel(1);
@@ -76,7 +74,6 @@ public class BinaryTree<K extends Comparable<K>, V> {
         else {
             add(root, 1, newNode);
         }
-
         size++;
     }
 
@@ -98,13 +95,9 @@ public class BinaryTree<K extends Comparable<K>, V> {
     }
 
     private BinaryNode<K, V> add(BinaryNode<K, V> current, int level, BinaryNode<K, V> newNode) {
-
         if(current == null) { return null; }
-
         int cmp = current.compareTo(newNode);
-
         if (cmp > 0) {
-
             if(current.getLeft() == null) {
                 current.setLeft(newNode);
                 newNode.setLevel(current.getLevel() + 1);
@@ -114,7 +107,6 @@ public class BinaryTree<K extends Comparable<K>, V> {
             }
         }
         else if (cmp < 0) {
-
             if(current.getRight() == null) {
                 current.setRight(newNode);
                 newNode.setLevel(current.getLevel() + 1);
@@ -123,81 +115,56 @@ public class BinaryTree<K extends Comparable<K>, V> {
                 return add(current.getRight(), level + 1, newNode);
             }
         }
-
         return null;
     }
 
     private K min(BinaryNode<K, V> current) {
-
-        //if(current == null) { return null; }
         if(current.getLeft() == null) { return current.getKey(); }
-
         return min(current.getLeft());
     }
 
     private K max(BinaryNode<K, V> current) {
-
-        //if(current == null) { return null; }
         if(current.getRight() == null) { return current.getKey(); }
-
         return max(current.getRight());
     }
 
     private int height(BinaryNode<K, V> current) {
-
         if(current == null) { return 0; }
-
         int left = current.getLeft() == null ? current.getLevel() : height(current.getLeft());
         int right = current.getRight() == null ? current.getLevel() : height(current.getRight());
-
         return Math.max(left, right);
     }
 
     private BinaryNode<K,V> get(BinaryNode<K, V> current, K key) {
-
         if(current == null) { return null; }
-
         int cmp = current.getKey().compareTo(key);
         if(cmp > 0) { return get(current.getLeft(), key); }
         else if(cmp < 0) { return get(current.getRight(), key); }
-
         return current;
     }
 
     private int numberOfChildren(BinaryNode<K, V> current) {
-
         Queue<BinaryNode<K,V>> queue = new Queue<BinaryNode<K,V>>();
         queue.enqueue(current);
-
         int count = 0;
         while(!queue.isEmpty()) {
-
             BinaryNode<K, V> n = queue.dequeue();
             if(n.getLeft() != null) { queue.enqueue(n.getLeft()); }
             if(n.getRight() != null) { queue.enqueue(n.getRight()); }
-
             count++;
         }
         return count;
     }
 
     private BinaryNode<K, V> delete(BinaryNode<K, V> node, K key) {
-
         if(node == null) { return null; }
-
-
         if(node.getLeft() != null && node.getLeft().getKey().compareTo(key) == 0) { node.setLeft(null); return node; }
         if(node.getRight() != null && node.getRight().getKey().compareTo(key) == 0) { node.setRight(null); return node; }
-
-
-
-        int cmp = node.getKey().compareTo(key);
+        int     cmp = node.getKey().compareTo(key);
         if      (cmp > 0) { return delete(node.getLeft(), key); }
         else if (cmp < 0) { return delete(node.getRight(), key); }
-
         throw new RuntimeException();
     }
-
 
     //
     //  Transverse by level
@@ -228,17 +195,14 @@ public class BinaryTree<K extends Comparable<K>, V> {
         }
 
         public BinaryNode<K, V> next() {
-
             if(!hasNext()) { throw new NoSuchElementException(); }
-
             BinaryNode<K, V> node = queue.dequeue();
-
             if(node.getLeft() != null) { queue.enqueue(node.getLeft()); }
             if(node.getRight() != null) { queue.enqueue(node.getRight()); }
-
             return node;
         }
 
+        public void remove() { }
     }
 
     //
@@ -277,13 +241,10 @@ public class BinaryTree<K extends Comparable<K>, V> {
         }
 
         private void getKeys(BinaryNode<K, V> node, List<BinaryNode<K, V>> list) {
-
             if(node == null) { return; }
-
             getKeys(node.getLeft(), list);
             list.add(node);
             getKeys(node.getRight(), list);
-
         }
 
         public boolean hasNext() {
@@ -293,6 +254,9 @@ public class BinaryTree<K extends Comparable<K>, V> {
         public BinaryNode<K, V> next() {
             return iterator.next();
         }
+
+        public void remove() { }
+
     }
 
     //
@@ -300,13 +264,10 @@ public class BinaryTree<K extends Comparable<K>, V> {
     //
     public List<K> keysInPreOrder() {
         List<K> keys = new LinkedList<K>();
-
         Iterator<BinaryNode<K, V>> iterator = iteratorInPreOrder();
-
         while(iterator.hasNext()) {
             keys.add(iterator.next().getKey());
         }
-
         return keys;
     }
 
@@ -331,13 +292,10 @@ public class BinaryTree<K extends Comparable<K>, V> {
         }
 
         private void getKeys(BinaryNode<K, V> node, List<BinaryNode<K, V>> list) {
-
             if(node == null) { return; }
-
             list.add(node);
             getKeys(node.getLeft(), list);
             getKeys(node.getRight(), list);
-
         }
 
         public boolean hasNext() {
@@ -347,6 +305,10 @@ public class BinaryTree<K extends Comparable<K>, V> {
         public BinaryNode<K, V> next() {
             return iterator.next();
         }
+
+        @Override
+        public void remove() { }
+
     }
 
     //
@@ -382,15 +344,10 @@ public class BinaryTree<K extends Comparable<K>, V> {
         }
 
         private void getKeys(BinaryNode<K, V> node, List<BinaryNode<K, V>> list) {
-
-            if (node == null) {
-                return;
-            }
-
+            if (node == null) { return; }
             getKeys(node.getLeft(), list);
             getKeys(node.getRight(), list);
             list.add(node);
-
         }
 
         public boolean hasNext() {
@@ -400,6 +357,9 @@ public class BinaryTree<K extends Comparable<K>, V> {
         public BinaryNode<K, V> next() {
             return iterator.next();
         }
+
+        public void remove() { }
+
     }
 
 }

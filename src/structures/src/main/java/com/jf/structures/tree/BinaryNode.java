@@ -55,15 +55,12 @@ public class BinaryNode<K extends Comparable<K>, V> implements Comparable<Binary
     }
 
     public int compareTo(BinaryNode<K, V> that) {
-
         int cmp = this.key.compareTo(that.key);
-
         if(cmp < 0) { return -1; }
         else if(cmp > 0) { return 1; }
         else {
             return 0;
         }
-
     }
 
 }
